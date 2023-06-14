@@ -1,0 +1,18 @@
+<body>
+    <main class="quadrado">
+        <div>
+
+            <h1 class="Login">
+                Login
+            </h1>
+
+            <input type="text" name="email" placeholder="email" [(ngModel)]="Usuario.email">
+            <input type="text" name="senha" placeholder="senha" [(ngModel)]="Usuario.senha">
+            <button (click)="Logar()">Entrar</button>
+
+        </div>
+        <div *ngFor="let user of usuarios;">
+            <a href=""></a>
+        </div>
+    </main>
+</body>
