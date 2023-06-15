@@ -8,13 +8,8 @@
 
             <input type="text" name="email" placeholder="email" [(ngModel)]="Usuario.email">
             <input type="text" name="senha" placeholder="senha" [(ngModel)]="Usuario.senha">
-            <button (click)="logar()">Entrar</button>
+            <button (click)="logar($event)">Entrar</button>
 
-        </div>
-        <div *ngFor="let user of usuarios;">
-            <div>
-                <a href=""></a>
-            </div>
         </div>
     </main>
 </body>
