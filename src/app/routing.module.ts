@@ -29,7 +29,7 @@ const rotas:Route[] = [
     
     {
         path:'',
-        redirectTo:'Inicio',
+        redirectTo:'registrar',
         pathMatch: 'full'
     }
 ]

@@ -66,6 +66,7 @@ export class PaginaInicialComponent{
 
   receitas: Receita[] = []
   usuarios: Usuario[] = []
+  slide: Receita[] = []
 
 
 
@@ -73,40 +74,27 @@ export class PaginaInicialComponent{
     const receita = window.localStorage.getItem('receitas') || '[]';
     this.receitas = JSON.parse(receita);
 
-    const user = window.localStorage.getItem('logado') || '{}';
+    const user = window.localStorage.getItem('logado') || '[]';
     this.Usuario = JSON.parse(user);
 
     const user2 = window.localStorage.getItem('registrados') || '[]';
-        this.usuarios = JSON.parse(user2);
+    this.usuarios = JSON.parse(user2);
 
-    this.receitas.forEach(element => {
-        const randomNumber = Math.floor(Math.random() * this.receitas.length);
+    var m = this.receitas.length, t, i;
 
-    });
+    while (m) {
+      i = Math.floor(Math.random() * m--);
 
-  }
-
-  salvarReceita(){
-    if(!this.Receita.nome || !this.Receita.ingrediente || !this.Receita.passoApasso){
-      return
+      t = this.receitas[m];
+      this.receitas[m] = this.receitas[i];
+      this.receitas[i] = t;
     }
-    
-    const receita: Receita={
-      usuario: this.Usuario.email,
-      nome: this.Receita.nome,
-      ingrediente: this.Receita.ingrediente,
-      passoApasso: this.Receita.passoApasso,
-      comentario: this.Receita.comentario,
-      imgUrl: this.imageUrl || '',
-      videoUrl: this.videoUrl || ''
+
+    localStorage.setItem('receitas', JSON.stringify(this.receitas))
+
+    for (let index = 0; index < 4; index++) {
+      this.slide[index] = this.receitas[index];
     }
-    this.receitas.push(receita)
-    alert('receita adicionada')
-    localStorage.setItem(JSON.stringify('receitas'), JSON.stringify(this.receitas))
-    this.Receita.ingrediente = null
-    this.Receita.nome = null
-    this.Receita.passoApasso = null
-    this.Receita.comentario = null
 
   }
 
