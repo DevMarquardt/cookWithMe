@@ -1,12 +1,17 @@
 <body>
-        <div class="quad">
+        <div class="boxRegistro">
             <h1 class="register">
                 Registrar
             </h1>
-            <input type="text" name="Nome" placeholder="Nome" [(ngModel)]="Usuario.nome">
-            <input type="text" name="email" placeholder="email" [(ngModel)]="Usuario.email">
-            <input type="text" name="senha" placeholder="senha" [(ngModel)]="Usuario.senha">
-            <input [ngClass]="{'red': Csenha !== Usuario.senha, 'green': Csenha === Usuario.senha}" type="text" placeholder="confirma senha" [(ngModel)]="Csenha">
-            <button (click)="novoUser(Csenha)">Cadastrar</button>
+            <div class="dadosRegistro">
+                <input type="text" name="Nome" placeholder="Nome" [(ngModel)]="Usuario.nome">
+                <input type="text" name="email" placeholder="email" [(ngModel)]="Usuario.email">
+                <input type="text" name="senha" placeholder="senha" [(ngModel)]="Usuario.senha">
+                <input [ngClass]="{'red': Csenha !== Usuario.senha, 'green': Csenha === Usuario.senha}" type="text" placeholder="confirma senha" [(ngModel)]="Csenha">
+            </div>
+            <br>
+            <div class="confirmarRegistro">
+                <button (click)="novoUser(Csenha)">Cadastrar</button>
+            </div>
         </div>
 </body>

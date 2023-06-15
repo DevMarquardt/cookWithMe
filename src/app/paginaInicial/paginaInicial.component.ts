@@ -17,8 +17,8 @@ interface Usuario {
 }
 
 @Component({
-    templateUrl: 'paginainicial.component.html',
-    styleUrls: ['paginaincial.css']
+    templateUrl: 'paginaInicial.component.html',
+    styleUrls: ['paginaInicial.component.css']
 })
 
 export class PaginaInicialComponent{

@@ -50,5 +50,6 @@ export class userComponent {
         this.Usuario.email = null
         this.Usuario.senha = null
         this.Csenha = null
+        window.location.replace("http://localhost:4200/login")
       }
 }
