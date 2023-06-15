@@ -58,9 +58,6 @@ export class userLoginComponent {
             localStorage.setItem('logado', JSON.stringify(users))
             
             window.location.replace("http://localhost:4200/Inicio")
-
-            this.router.navigate(['/Inicio'])
-
             return true
           }
         }
