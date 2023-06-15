@@ -1,8 +1,6 @@
 <body>
-    <main class="quadrado">
-        <div>
-
-            <h1 class="Login">
+        <div class="boxLogin">
+            <h1 class="login">
                 Login
             </h1>
 
@@ -10,6 +8,11 @@
             <input type="text" name="senha" placeholder="senha" [(ngModel)]="Usuario.senha">
             <button (click)="logar()">Entrar</button>
 
+        </div>
+        <div *ngFor="let user of usuarios;">
+            <div>
+                <a href=""></a>
+            </div>
         </div>
     </main>
 </body>

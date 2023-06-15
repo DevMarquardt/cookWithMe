@@ -22,6 +22,7 @@ interface Receita{
 
 @Component({
     templateUrl: 'usuarioLogin.component.html',
+    styleUrls: ['./usuarioLogin.component.css']
 })
 
 
@@ -55,7 +56,11 @@ export class userLoginComponent {
       this.usuarios.forEach(users => {
         if(users.senha === this.Usuario.senha && users.email === this.Usuario.email){
             localStorage.setItem('logado', JSON.stringify(users))
+            
+            window.location.replace("http://localhost:4200/Inicio")
+
             this.router.navigate(['/Inicio'])
+
             return true
           }
         }
