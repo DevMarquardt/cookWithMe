@@ -8,6 +8,7 @@ import { userComponent } from './registro/usuario.component';
 import { userLoginComponent } from './login/usuariologin.component';
 import { ReceitaComponent } from './addReceita/addReceita.component';
 import { PaginaInicialComponent } from './paginaInicial/paginaInicial.component';
+import { Router, RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -21,8 +22,10 @@ import { PaginaInicialComponent } from './paginaInicial/paginaInicial.component'
     BrowserModule,
     CommonModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
