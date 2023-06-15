@@ -1,7 +1,6 @@
 <body>
-    <main class="quadrado">
-        <div>
-            <h1 class="registrar">
+        <div class="quad">
+            <h1 class="register">
                 Registrar
             </h1>
             <input type="text" name="Nome" placeholder="Nome" [(ngModel)]="Usuario.nome">
@@ -10,14 +9,4 @@
             <input [ngClass]="{'red': Csenha !== Usuario.senha, 'green': Csenha === Usuario.senha}" type="text" placeholder="confirma senha" [(ngModel)]="Csenha">
             <button (click)="novoUser(Csenha)">Cadastrar</button>
         </div>
-        <div *ngFor="let user of usuarios;">
-            <br>
-            nome: {{user.nome}}
-            <br>
-            email: {{user.email}}
-            <br>
-            senha: {{user.senha}}
-            <br>
-        </div>
-    </main>
 </body>

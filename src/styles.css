@@ -3,6 +3,41 @@
     margin: 0 0 0 0;
 }
 
+input{
+    text-decoration: color(black);
+}
 body{
     margin: 0%;
+    background-image: url(https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80);
+    background-size: cover;
+}
+
+header{
+    background-color: black;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+}
+
+a{
+    color: #FCF6F6;
+}
+.cabecalho{
+    background-color: #5F2E1F;
+}
+
+.cabecalhoLOGO{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.cabecalhoPAGINAS{
+    display: flex;
+    background-attachment: fixed;
+    column-gap: 3rem;
+    align-items: center;
+    margin-right: 2rem;
 }

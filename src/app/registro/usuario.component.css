@@ -7,3 +7,56 @@
     border-color: green;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: black
+}
+  
+.register-container {
+    background-color: black;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+  
+.register {
+    color: #FCF6F6;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+  
+input {
+    display: block;
+    width: 200px;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 14px;
+}
+  
+button {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+  
+button:hover {
+    background-color: #45a049;
+}
+  
+.quad{
+    width: 377px;
+    height: 341px;
+    background: #5F2E1F;
+    border-radius: 35px;
+}
