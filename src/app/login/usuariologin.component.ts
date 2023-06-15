@@ -50,12 +50,7 @@ export class userLoginComponent {
     logar(){
       this.usuarios.forEach(users => {
         if(users.senha === this.Usuario.senha && users.email === this.Usuario.email){
-            localStorage.setItem(JSON.stringify('logado'), JSON.stringify(users))
-            this.receitas.forEach(receitasFor => {
-              if(receitasFor.usuario == users.email){
-                localStorage.setItem('logadoReceita', JSON.stringify(receitasFor))
-              }
-            });
+            localStorage.setItem('logado', JSON.stringify(users))
 
             return true
           }
