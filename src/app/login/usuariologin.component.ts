@@ -51,7 +51,7 @@ export class userLoginComponent {
         this.usuarios = JSON.parse(user);
     }
   
-    logar(event){
+    logar(){
       this.usuarios.forEach(users => {
         if(users.senha === this.Usuario.senha && users.email === this.Usuario.email){
             localStorage.setItem('logado', JSON.stringify(users))

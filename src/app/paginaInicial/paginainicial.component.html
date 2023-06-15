@@ -1,9 +1,14 @@
 <body>
+    <header>
+        <div>
+            <h3 style="color: whitesmoke; margin-left: 20px;">
+                <a href="http://localhost:4200/addReceita">adicionar Receita</a>
+            </h3>
+        </div>
+    </header>
     <main>
         <div >
-            <marquee behavior="" direction=" " class="marquee">
-                    <img [src]="img.imgUrl" *ngFor="let img of receitas;">
-            </marquee>
+            <img [src]="img.imgUrl" *ngFor="let img of receitas;" class="img">
         </div>
     </main>
 </body>

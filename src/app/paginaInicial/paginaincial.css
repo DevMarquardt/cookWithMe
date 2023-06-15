@@ -1,4 +1,7 @@
-.marquee{
-    display: flex;
+.img{
+    width: 300px;
+    height: 300px;
+    margin-right: 10px;
+    margin-left: 20px;
     
 }
