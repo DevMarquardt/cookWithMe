@@ -7,8 +7,8 @@
             <input type="text" name="Nome" placeholder="Nome" [(ngModel)]="Usuario.nome">
             <input type="text" name="email" placeholder="email" [(ngModel)]="Usuario.email">
             <input type="text" name="senha" placeholder="senha" [(ngModel)]="Usuario.senha">
-            <input [ngClass]="{'red': Usuario.Csenha !== Usuario.senha, 'green': Usuario.Csenha === Usuario.senha}" type="text" placeholder="confirma senha"[(ngModel)]="Usuario.Csenha">
-            <button (click)="novoUser()">Cadastrar</button>
+            <input [ngClass]="{'red': Csenha !== Usuario.senha, 'green': Csenha === Usuario.senha}" type="text" placeholder="confirma senha" [(ngModel)]="Csenha">
+            <button (click)="novoUser(Csenha)">Cadastrar</button>
         </div>
         <div *ngFor="let user of usuarios;">
             <br>
@@ -18,7 +18,6 @@
             <br>
             senha: {{user.senha}}
             <br>
-            Confirma Senha: {{user.Csenha}}
         </div>
     </main>
 </body>

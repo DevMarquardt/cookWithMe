@@ -1,0 +1,36 @@
+<body>
+    <main>
+        <div>
+            <div>
+                <input type="text" name="nome da receita" [(ngModel)]="Receita.nome">
+                <input type="text" name="ingredientes" [(ngModel)]="Receita.ingredientes">
+                <input type="text" name="Passo a passo" [(ngModel)]="Receita.passoApasso">
+
+                <br>
+                <h1>Image</h1>
+                <input type="file" accept="image/*" (change)="onFileSelected($event)">
+                <div *ngIf="imageUrl">
+                    <img [src]="imageUrl">
+                </div>
+                <br>
+                <br>
+                <h1>Video</h1>
+                <br>
+                <input type="file" accept="video/*" (change)="onFileSelectedVideo($event)">
+                <br>
+                <div *ngIf="videoUrl">
+                    <video [src]="videoUrl" controls></video>
+                </div>
+            </div>
+        </div>
+
+        <div>
+
+        </div>
+
+        <div>
+            <br>
+            <button (click)="salvarReceita()">Confirmar</button>
+        </div>
+    </main>
+</body>

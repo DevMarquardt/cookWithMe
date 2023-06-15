@@ -3,6 +3,8 @@ import { Route, RouterModule } from "@angular/router";
 import { AppComponent } from "./app.component";
 import { userLoginComponent } from "./login/usuariologin.component";
 import { userComponent } from "./registro/usuario.component";
+import { ReceitaComponent } from "./addReceita/addReceita.component";
+import { PaginaInicialComponent } from "./paginaInicial/paginaInicial.component";
 
 const rotas:Route[] = [
     {
@@ -13,6 +15,16 @@ const rotas:Route[] = [
     {
         path: 'login',
         component: userLoginComponent
+    },
+
+    {
+        path: 'addReceita',
+        component: ReceitaComponent
+    },
+
+    {
+        path: 'Inicio',
+        component: PaginaInicialComponent
     },
     
     {
