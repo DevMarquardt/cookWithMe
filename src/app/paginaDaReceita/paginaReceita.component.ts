@@ -1,11 +1,10 @@
 import { Component } from "@angular/core";
+import { stringify } from "@angular/core/src/util";
 
 interface Receita{
   usuario: string
+  usuarioQuePostou: string
   nome: string
-  ingrediente: string
-  passoApasso: string
-  comentario: string
   imgUrl: string
   videoUrl: string
 }
@@ -31,15 +30,14 @@ export class paginaDaReceita{
     Receita={
       usuario:'',
       nome: '',
-      ingrediente: '',
-      passoApasso: '',
-      comentario: '',
+      usuarioQuePostou: '',
       imgUrl: '',
       videoUrl: ''
     }
 
   receitaLogada: Receita
   logado: Usuario[] = []
+  receitasFavoritas : Receita[] = []
 
 
   ngOnInit(): void {
@@ -47,18 +45,36 @@ export class paginaDaReceita{
     this.receitaLogada = JSON.parse(receita);
     console.log(this.receitaLogada)
 
-    const user = window.localStorage.getItem('logado') || '{}';
+    const user = window.localStorage.getItem('logado') || '[]';
     this.Usuario = JSON.parse(user);
+
+    const receitasFavoritas = window.localStorage.getItem('receitasFavoritas') || '[]';
+    this.receitasFavoritas = JSON.parse(receitasFavoritas);
+
 
     console.log(this.Usuario);
 
   }
 
-  salvarReceita(){
-    if(!this.Receita.nome || !this.Receita.ingrediente || !this.Receita.passoApasso){
-      return
+  heart: any = "../../assets/imagens/heart-nocolor.png"
+  contador: number = 0
+  favorita():void{
+    this.contador+=1
+    let favoritas : Receita = {
+    usuario: this.Usuario.email,
+    usuarioQuePostou: this.receitaLogada.usuario,
+    nome: this.receitaLogada.nome,
+    imgUrl: this.receitaLogada.imgUrl,
+    videoUrl: this.receitaLogada.videoUrl
+    
     }
-
+    if(this.contador%2 === 1){
+      this.heart = "../../assets/imagens/heart.png"
+      this.receitasFavoritas.push(favoritas)
+      window.localStorage.setItem('receitasFavoritas', JSON.stringify(this.receitasFavoritas))
+    }else{
+      this.heart = "../../assets/imagens/heart-nocolor.png"
+      this.receitasFavoritas.splice(this.receitasFavoritas.indexOf(favoritas),1)
+    }
   }
-
 }

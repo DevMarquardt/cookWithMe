@@ -16,7 +16,7 @@
             <div class="dadosRegistro">
                 <input type="text" name="Nome" placeholder="Nome" [(ngModel)]="Usuario.nome">
                 <input type="text" name="email" placeholder="email" [(ngModel)]="Usuario.email">
-                <input type="text" name="senha" placeholder="senha" [(ngModel)]="Usuario.senha">
+                <input type="password" name="senha" placeholder="senha" [(ngModel)]="Usuario.senha">
                 <input [ngClass]="{'red': Csenha !== Usuario.senha, 'green': Csenha === Usuario.senha}" type="text" placeholder="confirma senha" [(ngModel)]="Csenha">
             </div>
             <br>
