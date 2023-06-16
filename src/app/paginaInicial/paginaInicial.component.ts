@@ -98,4 +98,9 @@ export class PaginaInicialComponent{
 
   }
 
+  salvaImagem(img){
+    const sla: Receita = img
+    console.log(sla.imgUrl)
+  }
+
 }

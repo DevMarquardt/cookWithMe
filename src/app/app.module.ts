@@ -9,6 +9,7 @@ import { userLoginComponent } from './login/usuariologin.component';
 import { ReceitaComponent } from './addReceita/addReceita.component';
 import { PaginaInicialComponent } from './paginaInicial/paginaInicial.component';
 import { Router, RouterModule } from '@angular/router';
+import { paginaDaReceita } from './paginaDaReceita/paginaReceita.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { Router, RouterModule } from '@angular/router';
     userComponent,
     userLoginComponent,
     ReceitaComponent,
-    PaginaInicialComponent
+    PaginaInicialComponent,
+    paginaDaReceita
   ],
   imports: [
     BrowserModule,

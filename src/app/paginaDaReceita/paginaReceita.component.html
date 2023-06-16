@@ -2,7 +2,10 @@
     <header>
 
     </header>
-    <main *ngFor="">
+    <main *ngFor="let receita of receitas">
+        <div *ngIf="receita.nome && receita.imgUrl">
+            nome: {{receita.nome}}
+        </div>
 
     </main>
 </body>

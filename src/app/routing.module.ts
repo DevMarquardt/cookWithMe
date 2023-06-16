@@ -5,6 +5,7 @@ import { userLoginComponent } from "./login/usuariologin.component";
 import { userComponent } from "./registro/usuario.component";
 import { ReceitaComponent } from "./addReceita/addReceita.component";
 import { PaginaInicialComponent } from "./paginaInicial/paginaInicial.component";
+import { paginaDaReceita } from "./paginaDaReceita/paginaReceita.component";
 
 const rotas:Route[] = [
     {
@@ -25,6 +26,11 @@ const rotas:Route[] = [
     {
         path: 'Inicio',
         component: PaginaInicialComponent
+    },
+
+    {
+        path: 'Receita',
+        component: paginaDaReceita
     },
     
     {

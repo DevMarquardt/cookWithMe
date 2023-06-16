@@ -1,17 +1,17 @@
 <header class="cabecalho">
     <div class="cabecalhoLOGO">
-      <a class="logo" href="http://localhost:4200/Inicio">Cook With Me</a>
+      <a class="logo" href="http://localhost:4200/Inicio" class="a">Cook With Me</a>
     </div>
     <div class="cabecalhoPAGINAS">
-        <a class="categorias" href="">Categorias</a>
-        <a class="adicionarReceita" href="http://localhost:4200/addReceita">Adicionar Receita</a>
-        <a href="notificoes" href=""><img src="" alt="">FALTA A IMAGEM</a>
-        <a href="configuracoes" href=""><img src="" alt="">FALTA A IMAGEM</a>
-        <a href="fotoDePerfil" href=""><img src="" alt="">FALTA A IMAGEM</a>
+        <a class="categorias" href="" class="a">Categorias</a>
+        <a class="adicionarReceita" href="http://localhost:4200/addReceita" class="a">Adicionar Receita</a>
+        <a href="notificoes" href="" class="a"><img src="" alt="">FALTA A IMAGEM</a>
+        <a href="configuracoes" href="" class="a"><img src="" alt="">FALTA A IMAGEM</a>
+        <a href="fotoDePerfil" href="" class="a"><img src="" alt="">FALTA A IMAGEM</a>
     </div>    
 </header>
 <body>
   <div>
-    <img class="img" *ngFor="let img of slide" [src]="img.imgUrl" alt="">
+    <img class="img" *ngFor="let img of slide" [src]="img.imgUrl" alt="" (click)="salvaImagem(img)">
   </div>
 </body>
