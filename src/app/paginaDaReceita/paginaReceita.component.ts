@@ -38,13 +38,14 @@ export class paginaDaReceita{
       videoUrl: ''
     }
 
-  receitas: Receita[] = []
+  receitaLogada: Receita
   logado: Usuario[] = []
 
 
   ngOnInit(): void {
-    const receita = window.localStorage.getItem('receitas') || '[]';
-    this.receitas = JSON.parse(receita);
+    const receita = window.localStorage.getItem('receitaPagina') || '[]';
+    this.receitaLogada = JSON.parse(receita);
+    console.log(this.receitaLogada)
 
     const user = window.localStorage.getItem('logado') || '{}';
     this.Usuario = JSON.parse(user);

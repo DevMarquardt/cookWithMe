@@ -2,9 +2,34 @@
     <header>
 
     </header>
-    <main *ngFor="let receita of receitas">
-        <div *ngIf="receita.nome && receita.imgUrl">
-            nome: {{receita.nome}}
+    <main style="color: white;">
+
+        <div>
+            {{receitaLogada.nome}}
+        </div>
+
+        <div>
+            <img [src]="receitaLogada.imgUrl" alt="">
+        </div>
+
+        <div>
+            /*nota - ainda vai ser feita
+        </div>
+
+        <div>
+            ingredientes: {{receitaLogada.ingrediente}}
+        </div>
+
+        <div>
+            Passo a passo: {{receitaLogada.passoApasso}}
+        </div>
+
+        <div>
+            comentarios: {{receitaLogada.comentario}}
+        </div>
+
+        <div>
+            <img src="./imagens/heart-nocolor.png" name="coraçon" alt="">
         </div>
 
     </main>

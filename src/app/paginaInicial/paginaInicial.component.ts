@@ -67,6 +67,7 @@ export class PaginaInicialComponent{
   receitas: Receita[] = []
   usuarios: Usuario[] = []
   slide: Receita[] = []
+  receitaPagina: Receita[] = []
 
 
 
@@ -99,8 +100,9 @@ export class PaginaInicialComponent{
   }
 
   salvaImagem(img){
-    const sla: Receita = img
-    console.log(sla.imgUrl)
+    localStorage.setItem('receitaPagina', JSON.stringify(img))
+    window.location.replace("http://localhost:4200/Receita")
+
   }
 
 }

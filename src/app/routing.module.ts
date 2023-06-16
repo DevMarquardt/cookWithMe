@@ -32,6 +32,11 @@ const rotas:Route[] = [
         path: 'Receita',
         component: paginaDaReceita
     },
+
+    {
+        path: 'Receita',
+        component: paginaDaReceita
+    },
     
     {
         path:'',
