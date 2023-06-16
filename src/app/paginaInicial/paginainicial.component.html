@@ -8,9 +8,20 @@
         <a href="notificoes" href="" class="a"><img src="" alt="">FALTA A IMAGEM</a>
         <a href="configuracoes" href="" class="a"><img src="" alt="">FALTA A IMAGEM</a>
         <a href="fotoDePerfil" href="" class="a"><img src="" alt="">FALTA A IMAGEM</a>
-    </div>    
+    </div>
 </header>
 <body>
+  <br>
+  <div class="searchBox">
+    <div class="search">
+      <input type="text" name="search" placeholder="O que vamos preparar hoje?">
+    </div>
+  </div>
+  <div>
+    <H1>Bem vindo ao Cook with me!</H1>
+    <h3>Conheça as receitas mais procuradas por chefes</h3>
+    <h1>Destaques</h1>
+  </div>
   <div>
     <img class="img" *ngFor="let img of slide" [src]="img.imgUrl" alt="" (click)="salvaImagem(img)">
   </div>

@@ -1,7 +1,7 @@
-@import url('https://fonts.cdnfonts.com/css/lovelo?styles=25962');
+@import url('https://fonts.googleapis.com/css2?family=Farro&display=swap');
 *{
     box-sizing: border-box;
-    font-family: 'Lovelo', sans-serif;
+    font-family: 'Farro', sans-serif;
 }
 
 input{
@@ -23,7 +23,7 @@ header{
     top: 0;
 }
 
-.a{
+a{
     position: relative;
     text-decoration: none;
     color: #D9D9D9;
