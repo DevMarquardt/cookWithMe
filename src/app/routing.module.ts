@@ -6,6 +6,7 @@ import { userComponent } from "./registro/usuario.component";
 import { ReceitaComponent } from "./addReceita/addReceita.component";
 import { PaginaInicialComponent } from "./paginaInicial/paginaInicial.component";
 import { paginaDaReceita } from "./paginaDaReceita/paginaReceita.component";
+import { favoritasComponent } from "./paginaFavoritas/favoritas.component";
 
 const rotas:Route[] = [
     {
@@ -36,6 +37,11 @@ const rotas:Route[] = [
     {
         path: 'Receita',
         component: paginaDaReceita
+    },
+
+    {
+        path: 'Favoritas',
+        component: favoritasComponent
     },
     
     {

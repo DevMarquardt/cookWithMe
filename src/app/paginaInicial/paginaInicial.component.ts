@@ -105,4 +105,21 @@ export class PaginaInicialComponent{
 
   }
 
+  contador = 0
+  desligaCard(event){
+    if(event.x > 607 && event.y > 60 || event.y > 20 && event.x < 497){
+      this.mostraMenuconfig = false
+    }
+  }
+
+  mostraMenuconfig: boolean = false
+
+  showMenuconfig():void{
+    this.contador+=1
+    this.mostraMenuconfig = !this.mostraMenuconfig
+  }
+
+
+
+
 }

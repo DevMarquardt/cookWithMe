@@ -1,9 +1,14 @@
 .img{
-    width: 300px;
-    height: 300px;
-    margin-right: 10px;
-    margin-left: 20px;
-    border-radius: 15px;   
+    width: 280px;
+    height: 280px;
+    border-radius: 15px;
+    border: 2px solid white;  
+}
+
+.imagens{
+    display: flex;
+    justify-content: center;
+    column-gap: 2rem;
 }
 
 .search{
@@ -47,3 +52,7 @@ h3{
     color: #D9D9D9;
     text-decoration: solid;
 }
+
+
+
+

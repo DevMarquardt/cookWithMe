@@ -10,6 +10,7 @@ import { ReceitaComponent } from './addReceita/addReceita.component';
 import { PaginaInicialComponent } from './paginaInicial/paginaInicial.component';
 import { Router, RouterModule } from '@angular/router';
 import { paginaDaReceita } from './paginaDaReceita/paginaReceita.component';
+import { favoritasComponent } from './paginaFavoritas/favoritas.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { paginaDaReceita } from './paginaDaReceita/paginaReceita.component';
     userLoginComponent,
     ReceitaComponent,
     PaginaInicialComponent,
-    paginaDaReceita
+    paginaDaReceita,
+    favoritasComponent
   ],
   imports: [
     BrowserModule,

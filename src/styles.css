@@ -12,19 +12,21 @@ body{
     margin: 0%;
     background-image: url(https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80);
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 header{
     height: 5rem;
     display: flex;
-    align-items: center;
     justify-content: space-between;
     position: sticky;
     top: 0;
 }
 
-a{
+.a{
     position: relative;
+    cursor: pointer;
     text-decoration: none;
     color: #D9D9D9;
     font-size: 18px;
@@ -47,6 +49,7 @@ a{
   .a:hover::after {
     width: 100%;
   }
+
 .cabecalho{
     background-color: #5F2E1F;
 }
@@ -54,11 +57,55 @@ a{
 .cabecalhoLOGO{
     display: flex;
     justify-content: flex-start;
+    margin-top: 2px;
+    letter-spacing: 0.5;
     margin-left: 3rem;
 }
 
 .cabecalhoPAGINAS{
     display: flex;
-    column-gap: 3rem;
+    margin-top: 8px;
     margin-right: 3rem;
+}
+
+.item{
+    cursor: pointer;
+    padding: 5px 0;
+    color: whitesmoke;
+}
+
+.item:hover{
+    text-decoration:underline;
+}
+
+
+.itens{
+    background-color: rgba(189, 188, 188, 0.8);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    
+}
+
+.item{
+    display: flex;
+    color: inherit;
+    background-color: whitesmoke;
+    color: rgb(26, 26, 26);
+    justify-content: center;
+    border: 2px black solid;
+    border-radius: 20px;
+    margin: 15px;
+}
+
+
+.cabecalhoRegister{
+    background-color: #5F2E1F;
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    color: whitesmoke;
 }

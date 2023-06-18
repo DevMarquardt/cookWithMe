@@ -1,16 +1,44 @@
-<header class="cabecalho">
+<body (click)="desligaCard($event)">
+  <header class="cabecalho">
+
     <div class="cabecalhoLOGO">
-      <a class="logo" href="http://localhost:4200/Inicio" class="a">Cook With Me</a>
+      <div>
+        <div class="a">
+            <h2 class="logo">Cook With Me</h2>
+          </div>
+      </div>
     </div>
+    
     <div class="cabecalhoPAGINAS">
-        <a class="categorias" href="" class="a">Categorias</a>
-        <a class="adicionarReceita" href="http://localhost:4200/addReceita" class="a">Adicionar Receita</a>
-        <a href="notificoes" href="" class="a"><img src="" alt="">FALTA A IMAGEM</a>
-        <a href="configuracoes" href="" class="a"><img src="" alt="">FALTA A IMAGEM</a>
-        <a href="fotoDePerfil" href="" class="a"><img src="" alt="">FALTA A IMAGEM</a>
+
+        <div class="container">
+          <div class="configuracoes" (click)="showMenuconfig()">
+            
+            <div class="a" >
+              <h3 style="width: 5rem;">Config</h3>
+            </div>
+            <div *ngIf="mostraMenuconfig" class="itens">
+              <h5 class="item">Geral</h5>
+              <h5 class="item">Privacidade</h5>
+              <h5 class="item">Favoritos</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="perfil" class="a" (click)="showMenuPerfil()">
+            <h3>Perfil</h3>
+            <div *ngIf="Perfil">
+              <h5>Geral</h5>
+              <h5>Privacidade</h5>
+              <h5>Favoritos</h5>
+            </div>
+          </div>
+        </div>
+        
     </div>
-</header>
-<body>
+
+  </header>
   <br>
   <div class="searchBox">
     <div class="search">
@@ -20,9 +48,9 @@
   <div>
     <H1>Bem vindo ao Cook with me!</H1>
     <h3>Conheça as receitas mais procuradas por chefes</h3>
-    <h1>Destaques</h1>
+    <h1 style="margin-top: 40px;">Destaques</h1>
   </div>
-  <div>
+  <div class="imagens">
     <img class="img" *ngFor="let img of slide" [src]="img.imgUrl" alt="" (click)="salvaImagem(img)">
   </div>
 </body>

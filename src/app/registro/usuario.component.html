@@ -1,7 +1,11 @@
-<header class="cabecalho">
+<header class="cabecalhoRegister">
     <div class="cabecalhoLOGO">
-      <a class="logo" href="http://localhost:4200/Inicio" class="a">Cook With Me</a>
-    </div>
+        <div>
+          <div class="a">
+              <h2 class="logo">Cook With Me</h2>
+            </div>
+        </div>
+      </div>
     <div class="cabecalhoPAGINAS">
       <a class="resgistar" href="http://localhost:4200/registrar" class="a">Registrar</a>
       <a class="login" href="http://localhost:4200/login" class="a">Login</a>
@@ -17,7 +21,7 @@
                 <input type="text" name="Nome" placeholder="Nome" [(ngModel)]="Usuario.nome">
                 <input type="text" name="email" placeholder="email" [(ngModel)]="Usuario.email">
                 <input type="password" name="senha" placeholder="senha" [(ngModel)]="Usuario.senha">
-                <input [ngClass]="{'red': Csenha !== Usuario.senha, 'green': Csenha === Usuario.senha}" type="text" placeholder="confirma senha" [(ngModel)]="Csenha">
+                <input [ngClass]="{'red': Csenha !== Usuario.senha, 'green': Csenha === Usuario.senha}" type="password" placeholder="confirma senha" [(ngModel)]="Csenha">
             </div>
             <br>
             <div class="confirmarRegistro">
