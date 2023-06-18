@@ -1,21 +1,38 @@
 <body (click)="desligaCard($event)">
-  <header class="cabecalho">
+  <header class="cabecalhoRegister">
 
     <div class="cabecalhoLOGO">
       <div>
         <div class="a">
-            <h2 class="logo">Cook With Me</h2>
+              <a class="logo" href="http://localhost:4200/Inicio">Cook With Me</a>
           </div>
       </div>
     </div>
     
     <div class="cabecalhoPAGINAS">
 
-        <div class="container">
-          <div class="configuracoes" (click)="showMenuconfig()">
-            
-            <div class="a" >
-              <h3 style="width: 5rem;">Config</h3>
+      <div class="container">
+        <div >
+          <a class="a"href="http://localhost:4200/addReceita">Adicionar Receita</a>
+        </div>
+      </div>
+
+      <div>
+        <div (click)="showCategorias()">
+          <div >
+            <a class="a">Categorias</a>
+          </div>
+          <div *ngIf="mostraMenuconfig" class="itens">
+            <h5 class="item">Doces</h5>
+            <h5 class="item">Salgados</h5>
+          </div>
+        </div>
+      </div>
+
+        <div>
+          <div (click)="showMenuconfig()">
+            <div >
+              <a class="a">Configurações</a>
             </div>
             <div *ngIf="mostraMenuconfig" class="itens">
               <h5 class="item">Geral</h5>
@@ -26,17 +43,13 @@
         </div>
 
         <div class="container">
-          <div class="perfil" class="a" (click)="showMenuPerfil()">
-            <h3>Perfil</h3>
-            <div *ngIf="Perfil">
-              <h5>Geral</h5>
-              <h5>Privacidade</h5>
-              <h5>Favoritos</h5>
-            </div>
+          <div >
+            <a class="a"href="http://localhost:4200/perfil">Perfil</a>
           </div>
         </div>
-        
     </div>
+
+
 
   </header>
   <br>

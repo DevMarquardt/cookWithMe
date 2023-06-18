@@ -28,7 +28,7 @@ header{
     position: relative;
     cursor: pointer;
     text-decoration: none;
-    color: #D9D9D9;
+    color: whitesmoke;
     font-size: 18px;
     letter-spacing: 0.5;
     padding: 0 10px;
@@ -37,7 +37,7 @@ header{
 .a::after {
     content: "";
     position: absolute;
-    background-color: #D9D9D9;
+    background-color: whitesmoke;
     border-radius: 10px;
     height: 3px;
     width: 0%;
@@ -71,7 +71,7 @@ header{
 .item{
     cursor: pointer;
     padding: 5px 0;
-    color: whitesmoke;
+    color: #D9D9D9;
 }
 
 .item:hover{
@@ -108,4 +108,6 @@ header{
 
 .logo{
     color: whitesmoke;
+    font-size: 27px;
+    text-decoration: none;
 }

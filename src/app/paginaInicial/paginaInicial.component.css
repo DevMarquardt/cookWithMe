@@ -30,7 +30,7 @@ input{
     background-color: transparent;
     border: transparent;
     text-decoration: none;
-    color: #D9D9D9;
+    color: whitesmoke;
     width: 470px;
     margin-left: 15px;
 }
@@ -43,15 +43,22 @@ textarea:focus, input:focus {
 h1,h2{
     margin-right: 10px;
     margin-left: 20px;
-    color: #D9D9D9;
+    color: whitesmoke;
 }
 
 h3{
     margin-right: 10px;
     margin-left: 20px;
-    color: #D9D9D9;
+    color: whitesmoke;
     text-decoration: solid;
 }
+
+.addReceita{
+    text-decoration: none;
+    color: whitesmoke;
+
+}
+
 
 
 
