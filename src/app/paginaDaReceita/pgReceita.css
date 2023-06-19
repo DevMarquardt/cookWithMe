@@ -13,8 +13,11 @@
   }
 
   .quebralinha{
+    display: flex;
     word-wrap: break-word;
     width: 500px;
+    justify-content: center;
+
   }
   .nomeElike{
     display: flex;
@@ -122,5 +125,4 @@
     justify-content: end;
     margin-top: 0;
   }
-  
   
