@@ -1,68 +1,67 @@
 <header class="cabecalhoRegister">
-    <div class="cabecalhoLOGO">
-        <div>
-          <div class="a">
-                <a class="logo" href="http://localhost:4200/Inicio">Cook With Me</a>
-            </div>
-        </div>
+  <div class="cabecalhoLOGO">
+    <div class="a">
+      <a class="logo" href="http://localhost:4200/Inicio">Cook With Me</a>
+    </div>
+  </div>
+
+  <div class="cabecalhoPAGINAS">
+    <div class="a" (click)="showMenuconfig()">
+      <a class="a">Configurações</a>
+      <div *ngIf="mostraMenuconfig" class="itens">
+        <h5 class="item">Geral</h5>
+        <h5 class="item">Privacidade</h5>
+        <h5 class="item">Favoritos</h5>
       </div>
-    
-    <div class="cabecalhoPAGINAS">
-
-        <div>
-          <div (click)="showMenuconfig()">
-            <div >
-              <a class="a">Configurações</a>
-            </div>
-            <div *ngIf="mostraMenuconfig" class="itens">
-              <h5 class="item">Geral</h5>
-              <h5 class="item">Privacidade</h5>
-              <h5 class="item">Favoritos</h5>
-            </div>
-          </div>
-        </div>
-
-        <div class="container">
-          <div >
-            <a class="a"href="http://localhost:4200/perfil">Perfil</a>
-          </div>
-        </div>
     </div>
 
+    <div>
+      <a class="a" href="http://localhost:4200/perfil">Perfil</a>
+    </div>
+  </div>
+</header>
 
-
-  </header>
 <body>
-        <div>
-            <div>
-                <input type="text" name="nome da receita" [(ngModel)]="Receita.nome" placeholder="nome da receita">
-                <input type="text" name="ingredientes" [(ngModel)]="Receita.ingrediente" placeholder="ingredientes">
-                <input type="text" name="Passo a passo" [(ngModel)]="Receita.passoApasso" placeholder="Passo a passo">
-
-                <br>
-                <h1>Image</h1>
-                <input type="file" accept="image/*" (change)="onFileSelected($event)">
-                <div *ngIf="imageUrl">
-                    <img [src]="imageUrl">
-                </div>
-                <br>
-                <br>
-                <h1>Video</h1>
-                <br>
-                <input type="file" accept="video/*" (change)="onFileSelectedVideo($event)">
-                <br>
-                <div *ngIf="videoUrl">
-                    <video [src]="videoUrl" controls></video>
-                </div>
-            </div>
+  <div class="inputs">
+    <div style="margin-top:67px ;" class="nomeInput">
+      <input class="inputPassoIngrediente" type="text" name="nome da receita" [(ngModel)]="Receita.nome" placeholder="Nome da receita">
+    </div>
+    <div style="margin-top:67px ;">
+      <div class="boxinputImagem">
+        <input class="inputImagem" type="file" accept="image/*" (change)="onFileSelected($event)">
+      </div>
+      <div class="boxImagem">
+        <div class="imagemAddReceita" *ngIf="imageUrl">
+          <img class="receitaImagem" [src]="imageUrl">
         </div>
-
-        <div>
-
+      </div>
+    </div>
+    
+    <div>
+      <h3 class="texto">Ingredientes</h3>
+      <div class="boxInput">
+        <div class="boxinputIngrediente">
+          <input class="inputPassoIngrediente" type="text" name="ingredientes" [(ngModel)]="Receita.ingrediente"
+          placeholder="Ingredientes">
         </div>
+      </div>
+    </div>
+   
 
-        <div>
-            <br>
-            <button (click)="salvarReceita()">Confirmar</button>
+    <div>
+      <h3 class="texto" >Passo a Passo</h3>
+      <div class="boxInput">
+        <div class="boxinputPasso">
+          <input class="inputPassoIngrediente" type="text" name="Passo a passo" [(ngModel)]="Receita.passoApasso"
+          placeholder="Passo a passo">
         </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <div class="confirma">
+    <button (click)="salvarReceita()">Confirmar</button>
+  </div>
 </body>
