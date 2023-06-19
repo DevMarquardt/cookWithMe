@@ -85,12 +85,15 @@ header{
     display: flex;
     flex-direction: column;
     border: 2px solid black;
+    margin-top: 20px ;
     
 }
 
 .foto{
     width: 60px;
-    border-radius: 1000px;
+    height: 60px;
+    border-radius: 100%;
+    margin-top: -15px;
 }
 
 .item{

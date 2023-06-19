@@ -10,36 +10,22 @@
     </div>
 
     <div class="cabecalhoPAGINAS">
-
-      <div class="container">
-        <div>
-          <a class="a" href="http://localhost:4200/addReceita">Adicionar Receita</a>
-        </div>
-      </div>
-
       <div>
-        <div (click)="showCategorias()">
-          <div>
-            <a class="a">Categorias</a>
-          </div>
           <div *ngIf="mostraMenuCat" class="itens">
             <h5 class="item">Doces</h5>
             <h5 class="item">Salgados</h5>
           </div>
-        </div>
       </div>
 
       <div>
         <div (click)="showMenuconfig()">
-          <div>
+          <div >
             <a class="a">Configurações</a>
           </div>
           <div *ngIf="mostraMenuconfig" class="itens">
-            <h5 class="item">Geral</h5>
+            <a href="http://localhost:4200/Perfil-Geral"><h5 class="item">Geral</h5></a>
             <h5 class="item">Privacidade</h5>
-            <a href="http://localhost:4200/Favoritas">
-              <h5 class="item">Favoritos</h5>
-            </a>
+            <a href="http://localhost:4200/Favoritas"><h5 class="item">Favoritos</h5></a>
           </div>
         </div>
       </div>
@@ -81,9 +67,7 @@
         </div>
       </div>
     </div>
-    <div class="flexConfirma">
-      <button class="confirmar" (click)="salvarReceita()">CONFIRMAR</button>
-    </div>
+
     </div>
 
     <div class="right">
@@ -97,15 +81,17 @@
           </div>
         </div>
 
-        <div class="input" *ngIf="ingredienteBol">
-          <textarea name="ingrediente" id="" cols="30" rows="10"
-          style="height: 649px; width: 830px; background-color: rgba(95, 46, 31, 0.99); color: rgb(216, 215, 215);resize: none; border-radius: 15px;"
-            [(ngModel)]="Receita.ingrediente" placeholder="Adicionar Ingredientes"></textarea>
-        </div>
-        <div class="input" *ngIf="passoBol">
-          <textarea name="ingrediente" id="" cols="30" rows="10"
-          style="height: 649px; width: 830px; background-color: rgba(95, 46, 31, 0.99); color: rgb(216, 215, 215);resize: none; border-radius: 15px;"
-            [(ngModel)]="Receita.passoApasso" placeholder="Adicionar Passo a Passo"></textarea>
+        <div class="a1">
+          <div class="input" *ngIf="ingredienteBol">
+            <textarea name="ingrediente" id="" cols="30" rows="10"
+            style="height: 297px; width: 468px; background-color: rgba(95, 46, 31, 0.99); color: rgb(216, 215, 215);resize: none; border-radius: 15px;"
+              [(ngModel)]="Receita.ingrediente" placeholder="Adicionar Ingredientes"></textarea>
+          </div>
+          <div class="input" *ngIf="passoBol">
+            <textarea name="ingrediente" id="" cols="30" rows="10"
+            style="height: 297px; width: 468px; background-color: rgba(95, 46, 31, 0.99); color: rgb(216, 215, 215);resize: none; border-radius: 15px;"
+              [(ngModel)]="Receita.passoApasso" placeholder="Adicionar Passo a Passo"></textarea>
+          </div>
         </div>
       </div>
     </div>
