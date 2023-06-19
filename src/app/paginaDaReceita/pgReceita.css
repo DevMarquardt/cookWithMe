@@ -1,0 +1,126 @@
+.sla{
+    width: 400px;
+    height: 300px;
+    background-color: white;
+    border-radius: 20px;
+  }
+  
+  .nomeDaReceita{
+    color: white;
+    display: flex;
+    justify-content:space-between;
+    font-size: xx-large;
+  }
+
+  .quebralinha{
+    word-wrap: break-word;
+    width: 500px;
+  }
+  .nomeElike{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .sla > div > img{
+    padding: 6px;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    width: 398px;
+    height: 300px;
+    border-radius: 30px;
+  }
+  
+  
+  .addFotoEnome{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .postadaPor{
+    display: flex;
+    justify-content: center;
+  }
+  
+  main{
+    display: grid ;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .left{
+    float: left;
+    padding: 20px;
+  
+  }
+  
+  .confirmar{
+    background-color: green;
+    border-radius: 40px;
+    height: 3rem;
+    width: 13rem;
+    font-size:xx-large;
+    border-color: white;
+  }
+  
+  
+  .confirmar:hover{
+    padding: 2px;
+  }
+  
+  .flexConfirma{
+    display: flex;
+    height: 10rem;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  
+  .imagemEvideo{
+    margin-left: 10px;
+  }
+  
+  .right{
+    float: right;
+    padding: 20px;
+  }
+  
+  .input{
+    width: 10rem;
+  }
+  
+  .inputIngredientes{
+    width: 10rem;
+    height: 30rem;
+  }
+  
+  .opcoes{
+    color: rgb(25, 243, 6);
+    display: flex;
+    justify-content: space-evenly;
+    cursor: pointer;
+  }
+  
+  .opcao{
+    background-color: rgba(95, 46, 31, 0.99); 
+    color: rgb(216, 215, 215);
+    border-radius: 50px;
+    width: 13rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .opcao:hover{
+    text-decoration: underline;
+  }
+
+  .heart{
+    cursor: pointer;
+    display: flex;
+    justify-content: end;
+    margin-top: 0;
+  }
+  
+  

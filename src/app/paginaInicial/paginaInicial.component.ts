@@ -109,14 +109,21 @@ export class PaginaInicialComponent{
   desligaCard(event){
     if(event.x > 607 && event.y > 60 || event.y > 20 && event.x < 497){
       this.mostraMenuconfig = false
+      this.mostraMenuCat = false
     }
   }
 
   mostraMenuconfig: boolean = false
 
   showMenuconfig():void{
-    this.contador+=1
     this.mostraMenuconfig = !this.mostraMenuconfig
+    this.mostraMenuCat = false
+  }
+
+  mostraMenuCat; boolean = false
+  showCategorias():void{
+    this.mostraMenuCat = !this.mostraMenuCat
+    this.mostraMenuconfig = false
   }
 
 

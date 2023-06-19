@@ -17,6 +17,7 @@ interface Usuario {
 
 @Component({
     templateUrl: 'paginaReceita.component.html',
+    styleUrls: ['pgReceita.css']
 })
 
 export class paginaDaReceita{
@@ -86,5 +87,18 @@ export class paginaDaReceita{
     }else{
       this.heart = "../../assets/imagens/heart-nocolor.png"
     }
+  }
+
+  ingredienteBol: boolean = true
+  ingredienteOn():void{
+    this.ingredienteBol = !this.ingredienteBol
+    this.passoBol = false
+
+  }
+
+  passoBol: boolean = false
+  passoOn():void{
+    this.passoBol = !this.passoBol
+    this.ingredienteBol = false
   }
 }

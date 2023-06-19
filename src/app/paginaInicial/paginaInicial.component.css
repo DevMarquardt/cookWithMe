@@ -54,7 +54,7 @@ h3{
 }
 
 .addReceita{
-    text-decoration: none;
+    text-decoration: underline;
     color: whitesmoke;
 
 }

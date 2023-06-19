@@ -96,11 +96,25 @@ export class ReceitaComponent{
     this.receitas.push(receita)
     alert('receita adicionada')
     localStorage.setItem('receitas', JSON.stringify(this.receitas))
+    console.log(receita.ingrediente)
     this.Receita.ingrediente = null
     this.Receita.nome = null
     this.Receita.passoApasso = null
     this.Receita.comentario = null
 
+  }
+
+  ingredienteBol: boolean = true
+  ingredienteOn():void{
+    this.ingredienteBol = !this.ingredienteBol
+    this.passoBol = false
+
+  }
+
+  passoBol: boolean = false
+  passoOn():void{
+    this.passoBol = !this.passoBol
+    this.ingredienteBol = false
   }
 
 }

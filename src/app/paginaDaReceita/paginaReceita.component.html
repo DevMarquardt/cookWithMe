@@ -1,36 +1,77 @@
 <body>
-    <header>
+    <header class="cabecalhoRegister">
+        <div class="cabecalhoLOGO">
+            <div class="logo">
+                <a class="a" href="http://localhost:4200/Inicio">Cook With Me</a>
+            </div>
+        </div>
 
+        <div class="cabecalhoPAGINAS">
+            <div (click)="showMenuconfig()">
+                <a class="a">Configurações</a>
+                <div *ngIf="mostraMenuconfig" class="itens">
+                    <h5 class="item">Geral</h5>
+                    <h5 class="item">Privacidade</h5>
+                    <h5 class="item">Favoritos</h5>
+                </div>
+            </div>
+
+            <div>
+                <a class="a" href="http://localhost:4200/perfil">Perfil</a>
+            </div>
+        </div>
     </header>
-    <main style="color: white;">
+    <main>
+        <div class="left">
+            <div class="nomeElike">
+                <div class="nomeDaReceita">
+                    <p class="quebralinha">{{receitaLogada.nome}}</p>
+                    
+                </div>
+                <div>
+                    <div class="heart">
+                        <img [src]="heart" alt="image" width="50px" height="50px" (click)="favorita($event)">
+                    </div>
+                </div>
+            </div>
+            <div class="addFotoEnome">
 
-        <div>
-            {{receitaLogada.nome}}
+                <div class="sla">
+                    <div class="imagemAddReceita">
+                        <img class="receitaImagem" [src]="receitaLogada.imgUrl">
+                    </div>
+                    <img class="receitaImagem" [src]="receitaLogada.videoUrl">
+                </div>
+
+            </div>
+            <div class="postadaPor">
+                <h3 style="color: white;">media</h3>
+            </div>
+            <div class="postadaPor">
+                <h3 style="color: white;">Postada por: {{receitaLogada.usuario}}</h3>
+            </div>
         </div>
 
-        <div>
-            <img [src]="receitaLogada.imgUrl" alt="">
-        </div>
+        <div class="right">
+            <div>
+                <div class="opcoes">
+                    <div>
+                        <h3 class="opcao" (click)="ingredienteOn()">Ingredientes</h3>
+                    </div>
+                    <div>
+                        <h3 class="opcao" (click)="passoOn()">Passo a passo</h3>
+                    </div>
+                </div>
 
-        <div>
-            /*nota - ainda vai ser feita
+                <div class="input" *ngIf="ingredienteBol">
+                    <textarea name="ingrediente" id="" cols="30" rows="10"
+                        style="height: 494px; width: 540px; background-color: rgba(95, 46, 31, 0.99); color: rgb(216, 215, 215); resize: none;">{{receitaLogada.ingrediente}}</textarea>
+                </div>
+                <div class="input" *ngIf="passoBol">
+                    <textarea name="ingrediente" id="" cols="30" rows="10"
+                        style="height: 494px; width: 540px; background-color: rgba(95, 46, 31, 0.99); color: rgb(216, 215, 215); resize: none;">{{receitaLogada.passoApasso}}</textarea>
+                </div>
+            </div>
         </div>
-
-        <div>
-            ingredientes: {{receitaLogada.ingrediente}}
-        </div>
-
-        <div>
-            Passo a passo: {{receitaLogada.passoApasso}}
-        </div>
-
-        <div>
-            comentarios: {{receitaLogada.comentario}}
-        </div>
-
-        <div>
-            <img [src]="heart" alt="image" width="100px" height="100px" (click)="favorita($event)">
-        </div>
-
     </main>
 </body>

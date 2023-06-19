@@ -1,67 +1,74 @@
-<header class="cabecalhoRegister">
-  <div class="cabecalhoLOGO">
-    <div class="a">
-      <a class="logo" href="http://localhost:4200/Inicio">Cook With Me</a>
-    </div>
-  </div>
-
-  <div class="cabecalhoPAGINAS">
-    <div class="a" (click)="showMenuconfig()">
-      <a class="a">Configurações</a>
-      <div *ngIf="mostraMenuconfig" class="itens">
-        <h5 class="item">Geral</h5>
-        <h5 class="item">Privacidade</h5>
-        <h5 class="item">Favoritos</h5>
-      </div>
-    </div>
-
-    <div>
-      <a class="a" href="http://localhost:4200/perfil">Perfil</a>
-    </div>
-  </div>
-</header>
-
 <body>
-  <div class="inputs">
-    <div style="margin-top:67px ;" class="nomeInput">
-      <input class="inputPassoIngrediente" type="text" name="nome da receita" [(ngModel)]="Receita.nome" placeholder="Nome da receita">
-    </div>
-    <div style="margin-top:67px ;">
-      <div class="boxinputImagem">
-        <input class="inputImagem" type="file" accept="image/*" (change)="onFileSelected($event)">
+  <header class="cabecalhoRegister">
+    <div class="cabecalhoLOGO">
+      <div class="logo">
+        <a class="a" href="http://localhost:4200/Inicio">Cook With Me</a>
       </div>
-      <div class="boxImagem">
-        <div class="imagemAddReceita" *ngIf="imageUrl">
-          <img class="receitaImagem" [src]="imageUrl">
+    </div>
+  
+    <div class="cabecalhoPAGINAS">
+      <div (click)="showMenuconfig()">
+        <a class="a">Configurações</a>
+        <div *ngIf="mostraMenuconfig" class="itens">
+          <h5 class="item">Geral</h5>
+          <h5 class="item">Privacidade</h5>
+          <h5 class="item">Favoritos</h5>
         </div>
       </div>
-    </div>
-    
-    <div>
-      <h3 class="texto">Ingredientes</h3>
-      <div class="boxInput">
-        <div class="boxinputIngrediente">
-          <input class="inputPassoIngrediente" type="text" name="ingredientes" [(ngModel)]="Receita.ingrediente"
-          placeholder="Ingredientes">
-        </div>
+  
+      <div>
+        <a class="a" href="http://localhost:4200/perfil">Perfil</a>
       </div>
     </div>
-   
+  </header>
+  <main>
+    <div class="left">
+      <input class="nomeDaReceita" type="text" placeholder="Nome da Receita">
+      <div class="addFotoEnome">
 
-    <div>
-      <h3 class="texto" >Passo a Passo</h3>
-      <div class="boxInput">
-        <div class="boxinputPasso">
-          <input class="inputPassoIngrediente" type="text" name="Passo a passo" [(ngModel)]="Receita.passoApasso"
-          placeholder="Passo a passo">
+        <div class="sla">
+          <div class="imagemAddReceita" *ngIf="imageUrl">
+            <img class="receitaImagem" [src]="imageUrl">
+          </div>
+          <div class="imagemAddReceita" *ngIf="videoUrl">
+            <img class="receitaImagem" [src]="videoUrl">
+          </div>
+        </div>
+
+        <div class="imagemEvideo">
+          <div>
+            <img src="../../assets/imagens/camera.png" alt="" width="50px">
+            <input type="file" accept="image/*" (change)="onFileSelected($event)">
+          </div>
+          <div>
+            <img style="margin-top: 20px;" src="../../assets/imagens/video.png" alt="" width="50px">
+            <input type="file" accept="video/*" (change)="onFileSelectedVideo($event)">
+          </div>
+        </div>
+      </div>
+      <div class="flexConfirma">
+        <button class="confirmar" (click)="salvarReceita()">CONFIRMAR</button>
+      </div>
+    </div>
+
+    <div class="right">
+      <div>
+        <div class="opcoes">
+          <div>
+            <h3 class="opcao" (click)="ingredienteOn()">Ingredientes</h3>
+          </div>
+          <div>
+            <h3 class="opcao" (click)="passoOn()">Passo a passo</h3>
+          </div>
+        </div>
+        
+        <div class="input" *ngIf="ingredienteBol">
+          <textarea name="ingrediente" id="" cols="30" rows="10" style="height: 494px; width: 540px; background-color: rgba(95, 46, 31, 0.99); color: rgb(216, 215, 215); resize: none;" [(ngModel)]="Receita.ingrediente" placeholder="Adicionar Ingredientes"></textarea>
+        </div>
+        <div class="input" *ngIf="passoBol">
+          <textarea name="ingrediente" id="" cols="30" rows="10" style="height: 494px; width: 540px; background-color: rgba(95, 46, 31, 0.99); color: rgb(216, 215, 215); resize: none;" [(ngModel)]="Receita.passoApasso" placeholder="Adicionar Passo a Passo"></textarea>
         </div>
       </div>
     </div>
-  </div>
-  <br>
-  <br>
-
-  <div class="confirma">
-    <button (click)="salvarReceita()">Confirmar</button>
-  </div>
+  </main>
 </body>
