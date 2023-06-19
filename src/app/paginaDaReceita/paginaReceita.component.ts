@@ -5,6 +5,9 @@ interface Receita{
   usuario: string
   usuarioQuePostou: string
   nome: string
+  ingrediente: string
+  passoApasso: string
+  comentario: string
   imgUrl: string
   videoUrl: string
 }
@@ -52,8 +55,12 @@ export class paginaDaReceita{
     const receitasFavoritas = window.localStorage.getItem('receitasFavoritas') || '[]';
     this.receitasFavoritas = JSON.parse(receitasFavoritas);
 
-
-    console.log(this.Usuario);
+    this.receitasFavoritas.forEach(element => {
+      if(element.nome === this.receitaLogada.nome && element.usuario === this.Usuario.email){
+        this.heart = "../../assets/imagens/heart.png"
+      }
+      
+    });
 
   }
 
@@ -64,6 +71,9 @@ export class paginaDaReceita{
     let favoritas : Receita = {
     usuario: this.Usuario.email,
     usuarioQuePostou: this.receitaLogada.usuario,
+    ingrediente: this.receitaLogada.ingrediente,
+    comentario: this.receitaLogada.comentario,
+    passoApasso: this.receitaLogada.passoApasso,
     nome: this.receitaLogada.nome,
     imgUrl: this.receitaLogada.imgUrl,
     videoUrl: this.receitaLogada.videoUrl
@@ -86,6 +96,7 @@ export class paginaDaReceita{
       window.localStorage.setItem('receitasFavoritas', JSON.stringify(this.receitasFavoritas))
     }else{
       this.heart = "../../assets/imagens/heart-nocolor.png"
+      window.localStorage.setItem('receitasFavoritas', JSON.stringify(this.receitasFavoritas))
     }
   }
 
@@ -100,5 +111,25 @@ export class paginaDaReceita{
   passoOn():void{
     this.passoBol = !this.passoBol
     this.ingredienteBol = false
+  }
+
+  desligaCard(event){
+    if(event.x > 607 && event.y > 60 || event.y > 20 && event.x < 497){
+      this.mostraMenuconfig = false
+      this.mostraMenuCat = false
+    }
+  }
+
+  mostraMenuconfig: boolean = false
+
+  showMenuconfig():void{
+    this.mostraMenuconfig = !this.mostraMenuconfig
+    this.mostraMenuCat = false
+  }
+
+  mostraMenuCat; boolean = false
+  showCategorias():void{
+    this.mostraMenuCat = !this.mostraMenuCat
+    this.mostraMenuconfig = false
   }
 }

@@ -23,7 +23,7 @@
   </header>
   <main>
     <div class="left">
-      <input class="nomeDaReceita" type="text" placeholder="Nome da Receita">
+      <input class="nomeDaReceita" type="text" placeholder="Nome da Receita" [(ngModel)]="Receita.nome">
       <div class="addFotoEnome">
 
         <div class="sla">
@@ -63,10 +63,10 @@
         </div>
         
         <div class="input" *ngIf="ingredienteBol">
-          <textarea name="ingrediente" id="" cols="30" rows="10" style="height: 494px; width: 540px; background-color: rgba(95, 46, 31, 0.99); color: rgb(216, 215, 215); resize: none;" [(ngModel)]="Receita.ingrediente" placeholder="Adicionar Ingredientes"></textarea>
+          <textarea name="ingrediente" id="" cols="30" rows="10" style="height: 494px; width: 480px; background-color: rgba(95, 46, 31, 0.99); color: rgb(216, 215, 215); resize: none; border-radius: 15px;" [(ngModel)]="Receita.ingrediente" placeholder="Adicionar Ingredientes"></textarea>
         </div>
         <div class="input" *ngIf="passoBol">
-          <textarea name="ingrediente" id="" cols="30" rows="10" style="height: 494px; width: 540px; background-color: rgba(95, 46, 31, 0.99); color: rgb(216, 215, 215); resize: none;" [(ngModel)]="Receita.passoApasso" placeholder="Adicionar Passo a Passo"></textarea>
+          <textarea name="ingrediente" id="" cols="30" rows="10" style="height: 494px; width: 480px; background-color: rgba(95, 46, 31, 0.99); color: rgb(216, 215, 215); resize: none; border-radius: 15px;" [(ngModel)]="Receita.passoApasso" placeholder="Adicionar Passo a Passo"></textarea>
         </div>
       </div>
     </div>

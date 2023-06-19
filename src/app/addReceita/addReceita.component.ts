@@ -101,7 +101,8 @@ export class ReceitaComponent{
     this.Receita.nome = null
     this.Receita.passoApasso = null
     this.Receita.comentario = null
-
+    this.imageUrl = null
+    this.videoUrl = null
   }
 
   ingredienteBol: boolean = true

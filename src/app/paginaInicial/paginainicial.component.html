@@ -37,7 +37,7 @@
             <div *ngIf="mostraMenuconfig" class="itens">
               <h5 class="item">Geral</h5>
               <h5 class="item">Privacidade</h5>
-              <h5 class="item">Favoritos</h5>
+              <a href="http://localhost:4200/Favoritas"><h5 class="item">Favoritos</h5></a>
             </div>
           </div>
         </div>
@@ -64,6 +64,9 @@
     <h1 style="margin-top: 40px;">Destaques</h1>
   </div>
   <div class="imagens">
-    <img class="img" *ngFor="let img of slide" [src]="img.imgUrl" alt="" (click)="salvaImagem(img)">
+    <div *ngFor="let img of slide">
+        <img class="img" [src]="img.imgUrl" alt="" (click)="salvaImagem(img)">
+        <h5>{{img.nome}}</h5>
+    </div>
   </div>
 </body>
