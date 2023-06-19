@@ -15,6 +15,7 @@ interface Usuario {
   nome: string;
   email: string;
   senha: string;
+  foto: string;
 }
 
 @Component({
@@ -52,7 +53,8 @@ export class favoritasComponent{
     Usuario={
       nome: '',
       email: '',
-      senha: ''
+      senha: '',
+      foto: ''
     }
 
     Receita={

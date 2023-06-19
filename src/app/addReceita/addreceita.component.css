@@ -37,7 +37,8 @@ main{
 
 .left{
   float: left;
-  padding: 50px;
+  margin: 20px;
+  margin-left: 50px;
 
 }
 
@@ -68,12 +69,9 @@ main{
 
 .right{
   float: right;
-  padding: 20px;
+  margin: 0;
 }
 
-.input{
-  width: 10rem;
-}
 
 .inputIngredientes{
   width: 10rem;

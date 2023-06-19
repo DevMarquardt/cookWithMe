@@ -11,6 +11,7 @@ import { PaginaInicialComponent } from './paginaInicial/paginaInicial.component'
 import { Router, RouterModule } from '@angular/router';
 import { paginaDaReceita } from './paginaDaReceita/paginaReceita.component';
 import { favoritasComponent } from './paginaFavoritas/favoritas.component';
+import { perfilComponent } from './geral/perfil.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { favoritasComponent } from './paginaFavoritas/favoritas.component';
     ReceitaComponent,
     PaginaInicialComponent,
     paginaDaReceita,
-    favoritasComponent
+    favoritasComponent,
+    perfilComponent
   ],
   imports: [
     BrowserModule,

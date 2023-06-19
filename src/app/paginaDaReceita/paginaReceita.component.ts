@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { stringify } from "@angular/core/src/util";
 
 interface Receita{
   usuario: string
@@ -16,6 +15,7 @@ interface Usuario {
   nome: string;
   email: string;
   senha: string;
+  foto: string;
 }
 
 @Component({

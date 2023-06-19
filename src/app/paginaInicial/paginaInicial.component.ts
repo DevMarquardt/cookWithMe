@@ -14,6 +14,7 @@ interface Usuario {
   nome: string;
   email: string;
   senha: string;
+  foto: string;
 }
 
 @Component({
@@ -51,7 +52,8 @@ export class PaginaInicialComponent{
     Usuario={
       nome: '',
       email: '',
-      senha: ''
+      senha: '',
+      foto: ''
     }
 
     Receita={
@@ -68,6 +70,7 @@ export class PaginaInicialComponent{
   usuarios: Usuario[] = []
   slide: Receita[] = []
   receitaPagina: Receita[] = []
+  userFoto: Usuario[] = []
 
 
 
@@ -82,6 +85,8 @@ export class PaginaInicialComponent{
     this.usuarios = JSON.parse(user2);
 
     var m = this.receitas.length, t, i;
+
+    this.userFoto.push(this.Usuario)
 
     while (m) {
       i = Math.floor(Math.random() * m--);
@@ -105,7 +110,6 @@ export class PaginaInicialComponent{
 
   }
 
-  contador = 0
   desligaCard(event){
     if(event.x > 607 && event.y > 60 || event.y > 20 && event.x < 497){
       this.mostraMenuconfig = false

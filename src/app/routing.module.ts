@@ -7,6 +7,7 @@ import { ReceitaComponent } from "./addReceita/addReceita.component";
 import { PaginaInicialComponent } from "./paginaInicial/paginaInicial.component";
 import { paginaDaReceita } from "./paginaDaReceita/paginaReceita.component";
 import { favoritasComponent } from "./paginaFavoritas/favoritas.component";
+import { perfilComponent } from "./geral/perfil.component";
 
 const rotas:Route[] = [
     {
@@ -35,13 +36,13 @@ const rotas:Route[] = [
     },
 
     {
-        path: 'Receita',
-        component: paginaDaReceita
+        path: 'Favoritas',
+        component: favoritasComponent
     },
 
     {
-        path: 'Favoritas',
-        component: favoritasComponent
+        path: 'Perfil-Geral',
+        component: perfilComponent
     },
     
     {

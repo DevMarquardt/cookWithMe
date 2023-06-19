@@ -4,6 +4,7 @@ interface Usuario {
     nome: string;
     email: string;
     senha: string;
+    foto: string;
 }
 
 @Component({
@@ -19,7 +20,8 @@ export class userComponent {
     Usuario={
         nome: '',
         email: '',
-        senha: ''
+        senha: '',
+        foto: ''
     }
 
     ngOnInit(): void {
@@ -41,7 +43,8 @@ export class userComponent {
         const user:Usuario ={
           nome: this.Usuario.nome,
           email: this.Usuario.email,
-          senha: this.Usuario.senha
+          senha: this.Usuario.senha,
+          foto: ''
         }
         this.usuarios.push(user)
         localStorage.setItem("registrados", JSON.stringify(this.usuarios))

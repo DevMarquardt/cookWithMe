@@ -88,6 +88,11 @@ header{
     
 }
 
+.foto{
+    width: 60px;
+    border-radius: 1000px;
+}
+
 .item{
     display: flex;
     color: inherit;

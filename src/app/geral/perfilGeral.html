@@ -1,0 +1,76 @@
+<body>
+    <header class="cabecalhoRegister">
+
+        <div class="cabecalhoLOGO">
+          <div>
+            <div class="a">
+                  <a class="logo" href="http://localhost:4200/Inicio">Cook With Me</a>
+              </div>
+          </div>
+        </div>
+        
+        <div class="cabecalhoPAGINAS">
+    
+          <div class="container">
+            <div >
+              <a class="a"href="http://localhost:4200/addReceita">Adicionar Receita</a>
+            </div>
+          </div>
+    
+          <div>
+            <div (click)="showCategorias()">
+              <div >
+                <a class="a">Categorias</a>
+              </div>
+              <div *ngIf="mostraMenuCat" class="itens">
+                <h5 class="item">Doces</h5>
+                <h5 class="item">Salgados</h5>
+              </div>
+            </div>
+          </div>
+    
+            <div>
+              <div (click)="showMenuconfig()">
+                <div style="display: flex;justify-content: center; width: 8rem;">
+                  <img src="../../assets/imagens/config.png" alt="" width="25px">
+                </div>
+                <div *ngIf="mostraMenuconfig" class="itens">
+                  <a href="http://localhost:4200/Perfil-Geral">
+                    <h5 class="item">Geral</h5>
+                  </a>
+                  <h5 class="item">Privacidade</h5>
+                  <a href="http://localhost:4200/Favoritas"><h5 class="item">Favoritos</h5></a>
+                </div>
+              </div>
+            </div>
+    
+            <img class="foto" style="margin: 0;" [src]="Usuario.foto" alt="">
+        </div>
+    
+    
+    
+      </header>
+
+      <main>
+        <div class="boxColor">
+            <div class="box">
+                <div class="name">
+                    <h2 style="margin-left: 13rem;">Configurações Gerais</h2>
+                    <div style="margin-right: 10px;">
+                        <a href="http://localhost:4200/Inicio"><img src="../../assets/imagens/voltar.png" width="35px" alt=""></a>
+                    </div>
+                </div>
+                <div class="inputs">
+                    <h4>Alterar nome: <input type="text" placeholder="Novo nome" [(ngModel)]="Usuario.nome"></h4>
+                    <h4>Alterar foto: <input type="file" (change)="onFileSelected($event)"></h4>
+                    <h4>Alterar email: <input type="text" placeholder="Novo email" [(ngModel)]="Usuario.email"></h4>
+                    <h4>Alterar senha: <input type="password" placeholder="Nova senha" [(ngModel)]="Usuario.senha"></h4>
+                    <h4>confirmar senha: <input [ngClass]="{'red': Csenha !== Usuario.senha, 'green': Csenha === Usuario.senha}" type="password" placeholder="confirmar senha" [(ngModel)]="Csenha"></h4>
+                </div>
+                <div class="buttonSalvar">
+                    <button (click)="novoUser(Csenha)">salvar alterações</button>
+                </div>
+            </div>
+        </div>  
+      </main>
+</body>

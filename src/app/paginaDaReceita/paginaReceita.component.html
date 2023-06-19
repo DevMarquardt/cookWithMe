@@ -42,11 +42,8 @@
               </div>
             </div>
     
-            <div class="container">
-              <div >
-                <a class="a"href="http://localhost:4200/perfil">Perfil</a>
-              </div>
-            </div>
+            <img class="foto" [src]="Usuario.foto" alt="">
+
         </div>
     
     
@@ -92,16 +89,22 @@
                     <div>
                         <h3 class="opcao" (click)="passoOn()">Passo a passo</h3>
                     </div>
+                    <div>
+                      <h3 class="opcao" (click)="comentOn()">Comentarios</h3>
+                  </div>
                 </div>
 
                 <div class="input" *ngIf="ingredienteBol">
                     <textarea name="ingrediente" id="" cols="30" rows="10"
-                        style="height: 494px; width: 540px; background-color: rgba(95, 46, 31, 0.99); color: rgb(216, 215, 215); resize: none;">{{receitaLogada.ingrediente}}</textarea>
+                        style="height: 494px; width: 540px; background-color: rgba(95, 46, 31, 0.99); color: rgb(216, 215, 215); resize: none; border-radius: 15px;" [readonly]="true">{{receitaLogada.ingrediente}}</textarea>
                 </div>
                 <div class="input" *ngIf="passoBol">
                     <textarea name="ingrediente" id="" cols="30" rows="10"
-                        style="height: 494px; width: 540px; background-color: rgba(95, 46, 31, 0.99); color: rgb(216, 215, 215); resize: none;">{{receitaLogada.passoApasso}}</textarea>
+                        style="height: 494px; width: 540px; background-color: rgba(95, 46, 31, 0.99); color: rgb(216, 215, 215); resize: none; border-radius: 15px;" [readonly]="true">{{receitaLogada.passoApasso}}</textarea>
                 </div>
+                <div class="input" *ngIf="passoBol">
+                  
+              </div>
             </div>
         </div>
     </main>

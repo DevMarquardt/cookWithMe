@@ -8,6 +8,7 @@ interface Usuario {
     nome: string;
     email: string;
     senha: string;
+    foto: string;
 }
 
 interface Receita{
@@ -34,7 +35,8 @@ export class userLoginComponent {
     Usuario={
         nome: '',
         email: '',
-        senha: ''
+        senha: '',
+        foto: ''
     }
 
     Receita={
