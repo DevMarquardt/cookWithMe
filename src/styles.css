@@ -85,11 +85,9 @@ header{
     display: flex;
     flex-direction: column;
     border: 2px solid black;
-<<<<<<< HEAD
-=======
+
     margin-top: 20px ;
     
->>>>>>> 6271e2061b95a803c0cb75b6c3d208fd2ef51763
 }
 
 .foto{
