@@ -85,8 +85,6 @@ export class perfilComponent {
 
     novoUser(Csenha): void {
 
-        this.Usuario.foto = this.imageUrl
-
         const user3 = window.localStorage.getItem('logado') || '[]';
         this.UserAntigo = JSON.parse(user3);
 
@@ -94,10 +92,11 @@ export class perfilComponent {
             alert("As senhas não coincidem")
             return
         }
+
+        this.Usuario.foto = this.imageUrl
         
 
         this.usuarios.forEach(element => {
-            console.log(this.UserAntigo.email)
             if (element.email == this.UserAntigo.email) {
                 console.log(this.UserAntigo.email)
                 element.nome = this.Usuario.nome

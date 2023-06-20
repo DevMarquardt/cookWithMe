@@ -1,113 +1,140 @@
 <body (click)="desligaCard($event)">
-    <header class="cabecalhoRegister">
-  
-        <div class="cabecalhoLOGO">
+  <header class="cabecalhoRegister">
+
+    <div class="cabecalhoLOGO">
+      <div>
+        <div class="a">
+          <a class="logo" href="http://localhost:4200/Inicio">Cook With Me</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="cabecalhoPAGINAS">
+
+      <div class="container">
+        <div>
+          <a class="a" href="http://localhost:4200/addReceita">Adicionar Receita</a>
+        </div>
+      </div>
+
+      <div>
+        <div (click)="showCategorias()">
           <div>
-            <div class="a">
-                  <a class="logo" href="http://localhost:4200/Inicio">Cook With Me</a>
-              </div>
+            <a class="a">Categorias</a>
+          </div>
+          <div *ngIf="mostraMenuCat" class="itens">
+            <h5 class="item">Doces</h5>
+            <h5 class="item">Salgados</h5>
           </div>
         </div>
-        
-        <div class="cabecalhoPAGINAS">
-    
-          <div class="container">
-            <div >
-              <a class="a"href="http://localhost:4200/addReceita">Adicionar Receita</a>
-            </div>
-          </div>
-    
+      </div>
+
+      <div>
+        <div (click)="showMenuconfig()">
           <div>
-            <div (click)="showCategorias()">
-              <div >
-                <a class="a">Categorias</a>
-              </div>
-              <div *ngIf="mostraMenuCat" class="itens">
-                <h5 class="item">Doces</h5>
-                <h5 class="item">Salgados</h5>
-              </div>
-            </div>
+            <a class="a">Configurações</a>
           </div>
-    
-            <div>
-              <div (click)="showMenuconfig()">
-                <div >
-                  <a class="a">Configurações</a>
-                </div>
-                <div *ngIf="mostraMenuconfig" class="itens">
-                  <h5 class="item">Geral</h5>
-                  <h5 class="item">Privacidade</h5>
-                  <a href="http://localhost:4200/Favoritas"><h5 class="item">Favoritos</h5></a>
-                </div>
-              </div>
-            </div>
-    
-            <img class="foto" [src]="Usuario.foto" alt="">
+          <div *ngIf="mostraMenuconfig" class="itens">
+            <h5 class="item">Geral</h5>
+            <h5 class="item">Privacidade</h5>
+            <a href="http://localhost:4200/Favoritas">
+              <h5 class="item">Favoritos</h5>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <img class="foto" [src]="Usuario.foto" alt="">
+
+    </div>
+
+
+
+  </header>
+  <main>
+    <div class="left">
+      <div class="nomeElike">
+        <div>
 
         </div>
-    
-    
-    
-      </header>
-    <main>
-        <div class="left">
-            <div class="nomeElike">
-              <div>
-                
-              </div>
-                <div class="nomeDaReceita">
-                    <p class="quebralinha">{{receitaLogada.nome}}</p>
-                </div>
-                <div>
-                    <div class="heart">
-                        <img [src]="heart" alt="image" width="50px" height="50px" (click)="favorita($event)">
-                    </div>
-                </div>
-            </div>
-            <div class="addFotoEnome">
+        <div class="nomeDaReceita">
+          <p class="quebralinha">{{receitaLogada.nome}}</p>
+        </div>
+        <div>
+          <div class="heart">
+            <img [src]="heart" alt="image" width="50px" height="50px" (click)="favorita($event)">
+          </div>
+        </div>
+      </div>
+      <div class="addFotoEnome">
 
-                <div class="sla">
-                    <div class="imagemAddReceita">
-                        <img class="receitaImagem" [src]="receitaLogada.imgUrl">
-                    </div>
-                    <img class="receitaImagem" [src]="receitaLogada.videoUrl">
-                </div>
-
-            </div>
-            <div class="postadaPor">
-                <h3 style="color: white;">media</h3>
-            </div>
-            <div class="postadaPor">
-                <h3 style="color: white;">Postada por: {{receitaLogada.usuario}}</h3>
-            </div>
+        <div class="sla">
+          <div class="imagemAddReceita">
+            <img class="receitaImagem" [src]="receitaLogada.imgUrl">
+          </div>
+          <img class="receitaImagem" [src]="receitaLogada.videoUrl">
         </div>
 
-        <div class="right">
-            <div>
-                <div class="opcoes">
-                    <div>
-                        <h3 class="opcao" (click)="ingredienteOn()">Ingredientes</h3>
-                    </div>
-                    <div>
-                        <h3 class="opcao" (click)="passoOn()">Passo a passo</h3>
-                    </div>
-                    <div>
-                      <h3 class="opcao" (click)="comentOn()">Comentarios</h3>
+      </div>
+      <div class="postadaPor">
+        <h3 style="color: white;">media</h3>
+      </div>
+      <div class="postadaPor">
+        <h3 style="color: white;">Postada por: {{receitaLogada.usuario}}</h3>
+      </div>
+    </div>
+
+    <div class="right">
+      <div>
+        <div class="opcoes">
+          <div>
+            <h3 class="opcao" (click)="ingredienteOn()">Ingredientes</h3>
+          </div>
+          <div>
+            <h3 class="opcao" (click)="passoOn()">Passo a passo</h3>
+          </div>
+          <div>
+            <h3 class="opcao" (click)="comentOn()">Comentarios</h3>
+          </div>
+        </div>
+
+        <div class="input" *ngIf="ingredienteBol">
+          <textarea name="ingrediente" id="" cols="30" rows="10"
+            style="height: 425px; width: 636px; background-color: rgba(95, 46, 31, 0.99); color: rgb(216, 215, 215); resize: none; border-radius: 15px;"
+            [readonly]="true">{{receitaLogada.ingrediente}}</textarea>
+        </div>
+        <div class="input" *ngIf="passoBol">
+          <textarea name="ingrediente" id="" cols="30" rows="10"
+            style="height: 425px; width: 636px; background-color: rgba(95, 46, 31, 0.99); color: rgb(216, 215, 215); resize: none; border-radius: 15px;"
+            [readonly]="true">{{receitaLogada.passoApasso}}</textarea>
+        </div>
+        <div class="input" *ngIf="comentBol">
+          <div class="comentariosBox">
+
+            <div class="flex" *ngFor="let comentario of comentariosLogado">
+              <div style="display: flex;">
+                <img [src]="comentario.fotoUsuario" width="40px" height="35px" style="border-radius: 1000px; "
+                  alt="">
+                <div class="userEnota" style="margin-top: -25px;">
+                  <div>
+                    <h5>{{comentario.usuarioQueComentou}}</h5>
+                  </div>
+                  <div>
+                    <h5>{{comentario.nota}}/5</h5>
                   </div>
                 </div>
-
-                <div class="input" *ngIf="ingredienteBol">
-                    <textarea name="ingrediente" id="" cols="30" rows="10"
-                        style="height: 494px; width: 540px; background-color: rgba(95, 46, 31, 0.99); color: rgb(216, 215, 215); resize: none; border-radius: 15px;" [readonly]="true">{{receitaLogada.ingrediente}}</textarea>
+                <div class="coment" style="display: flex; justify-content: first baseline; margin-left: -10rem;">
+                  <h4>{{comentario.comentario}}</h4>
                 </div>
-                <div class="input" *ngIf="passoBol">
-                    <textarea name="ingrediente" id="" cols="30" rows="10"
-                        style="height: 494px; width: 540px; background-color: rgba(95, 46, 31, 0.99); color: rgb(216, 215, 215); resize: none; border-radius: 15px;" [readonly]="true">{{receitaLogada.passoApasso}}</textarea>
-                </div>
-                <div class="input" *ngIf="passoBol">
-                  
               </div>
             </div>
+
+          </div>
+          <input type="text" name="" id="" [(ngModel)]="Comentario.comentario">
+          <input type="number" max="5" [(ngModel)]="Comentario.nota">
+          <button (click)="comentar()">enviar</button>
         </div>
-    </main>
+      </div>
+    </div>
+  </main>
 </body>

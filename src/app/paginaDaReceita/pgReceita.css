@@ -125,4 +125,24 @@
     justify-content: end;
     margin-top: 0;
   }
+
+  .comentariosBox{
+    color: rgb(216, 214, 214);
+    width: 39rem;
+    height: 25rem;
+    background-color: rgba(95, 46, 31, 0.99);
+    border-radius: 20px;
+    overflow: auto;
+  }
+
+  .flex{
+    padding: 20px;
+  }
+
+  .userEnota{
+    display: flex;
+    width: 10rem;
+    justify-content: space-between;
+    margin-left: 5px;
+  }
   
