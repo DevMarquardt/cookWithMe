@@ -116,3 +116,8 @@ main{
   align-items: center;
   color: whitesmoke;
 }
+
+.a1{
+  display: flex;
+  justify-content: center;
+}

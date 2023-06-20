@@ -10,7 +10,6 @@
     </div>
     
     <div class="cabecalhoPAGINAS">
-
       <div class="container">
         <div >
           <a class="a"href="http://localhost:4200/addReceita">Adicionar Receita</a>
@@ -42,8 +41,10 @@
           </div>
         </div>
 
-        <div *ngFor="let imgs of userFoto">
-          <img class="foto" [src]="imgs.foto" alt="">
+        <div class="container">
+          <div *ngFor="let imgs of userFoto">
+            <img class="foto" [src]="imgs.foto" alt="">
+          </div>
         </div>
     </div>
 
@@ -59,7 +60,7 @@
   <div>
     <H1>Bem vindo ao Cook with me!</H1>
     <h3>Conheça as receitas mais procuradas por chefes</h3>
-    <h1 style="margin-top: 40px;">Destaques</h1>
+    <h1 style="margin-top: 30px;">Destaques</h1>
   </div>
   <div class="imagens">
     <div *ngFor="let img of slide">
