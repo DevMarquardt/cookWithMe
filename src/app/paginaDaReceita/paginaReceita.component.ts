@@ -62,6 +62,8 @@ export class paginaDaReceita {
   receitasFavoritas: Receita[] = []
   comentarios: Comentario[] = []
 
+  nota: number = 0
+  sum: number = 0
 
   ngOnInit(): void {
     if (this.Comentario.nota > 5) {
@@ -96,17 +98,30 @@ export class paginaDaReceita {
       }
     });
 
-    let contador3: number = 0
+    let contador3 = 0
+
     this.comentarios.forEach(element => {
-      if (element.receitaUser === this.receitaLogada.usuario) {
-        this.sum += element.nota
-        contador3 += 1
+      if (element.receita === this.receitaLogada.nome) {
+        if(element.nota>5){
+          element.nota = 5
+        }
+        if(element.nota<=5){
+          contador3+=1
+        }
       }
     });
 
-    this.nota = this.sum / contador3
-
+    this.contadorComentarios = 0
+    this.comentarios.forEach(element => {
+      if(element.receita === this.receitaLogada.nome){
+        this.sum+=element.nota
+        this.contadorComentarios+=1
+      }
+    });
   }
+
+  contadorComentarios: number = 0
+
 
   comentariosLogado: Comentario[] = []
 
@@ -187,10 +202,10 @@ export class paginaDaReceita {
   }
 
   comentar(): void {
-    if (this.Comentario.nota > 5) {
-      this.Comentario.nota = 5
-    }
-    if (this.Comentario.comentario && this.Comentario.nota) {
+    if (this.Comentario.comentario) {
+      if (this.Comentario.nota > 5) {
+        this.Comentario.nota = 5
+      }
       const newComent: Comentario = {
         usuarioQueComentou: this.Usuario.nome,
         fotoUsuario: this.Usuario.foto,
@@ -202,24 +217,9 @@ export class paginaDaReceita {
 
       this.comentarios.push(newComent)
       window.localStorage.setItem('comentarios', JSON.stringify(this.comentarios))
-      let contador3: number = 0
-      this.comentarios.forEach(element => {
-        if (element.receita === this.receitaLogada.usuarioQuePostou) {
-          this.sum += element.nota
-          contador3 += 1
-        }
-      });
 
-      this.nota = this.sum / contador3
       this.ngOnInit()
+      window.location.reload()
     }
   }
-  nota: number = 0
-  sum: number = 0
-  onChange() {
-    if (this.Comentario.nota > 5) {
-      this.Comentario.nota = 5
-    }
-  }
-
 }

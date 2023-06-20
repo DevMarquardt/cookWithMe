@@ -77,7 +77,7 @@
 
       </div>
       <div class="postadaPor">
-        <h3 style="color: white;">{{nota}}/5</h3>
+        <h3 style="color: white;">{{ (sum/contadorComentarios).toFixed(1)}}/5</h3>
       </div>
       <div class="postadaPor">
         <h3 style="color: white;">Postada por: {{receitaLogada.usuario}}</h3>
@@ -131,7 +131,7 @@
 
           </div>
           <input type="text" name="" id="" [(ngModel)]="Comentario.comentario">
-          <input type="number" max="5" maxlength="0" [(ngModel)]="Comentario.nota" (change)="onChange()">
+          <input type="number" max="5" maxlength="0" [(ngModel)]="Comentario.nota">
           <button (click)="comentar()">enviar</button>
         </div>
       </div>

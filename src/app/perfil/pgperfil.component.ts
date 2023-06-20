@@ -81,17 +81,22 @@ export class pgPerfilComponent{
             }
         });
 
-        let sum: number
+        this.sum = 0
+        let contadorComentarios: number = 0
         this.comentarios.forEach(element => {
-          if(element.receitaUser === this.Usuario.email){
-            sum+=element.nota
-          }
+          this.receitas.forEach(elementRec => {
+            if(element.receita === elementRec.nome && elementRec.usuario === this.Usuario.email){
+              this.sum+=element.nota
+              contadorComentarios+=1
+            }
+          });
         });
 
-        this.nota = sum/this.slide.length
+        this.nota = (this.sum/contadorComentarios)
       }
 
       nota: number
+      sum: number
 
     desligaCard(event){
         if(event.x > 607 && event.y > 60 || event.y > 20 && event.x < 497){

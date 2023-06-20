@@ -80,7 +80,7 @@ export class ReceitaComponent{
   }
 
   salvarReceita(){
-    if(!this.Receita.nome || !this.Receita.ingrediente || !this.Receita.passoApasso){
+    if(!this.Receita.nome || !this.Receita.ingrediente || !this.Receita.passoApasso || !this.imageUrl){
       return
     }
     
