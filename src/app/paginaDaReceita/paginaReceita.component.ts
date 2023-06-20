@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 
-interface Receita{
+interface Receita {
   usuario: string
   usuarioQuePostou: string
   nome: string
@@ -10,7 +10,7 @@ interface Receita{
   videoUrl: string
 }
 
-interface Comentario{
+interface Comentario {
   fotoUsuario: string;
   usuarioQueComentou: string;
   comentario: string;
@@ -27,43 +27,46 @@ interface Usuario {
 }
 
 @Component({
-    templateUrl: 'paginaReceita.component.html',
-    styleUrls: ['pgReceita.css']
+  templateUrl: 'paginaReceita.component.html',
+  styleUrls: ['pgReceita.css']
 })
 
-export class paginaDaReceita{
+export class paginaDaReceita {
 
-    Usuario={
-      nome: '',
-      email: '',
-      senha: '',
-      foto: ''
-    }
+  Usuario = {
+    nome: '',
+    email: '',
+    senha: '',
+    foto: ''
+  }
 
-    Comentario={
-      fotoUsuario: '',
-      usuarioQueComentou: '',
-      comentario: '',
-      nota: 0,
-      receita: '',
-      receitaUser: ''
-    }
+  Comentario = {
+    fotoUsuario: '',
+    usuarioQueComentou: '',
+    comentario: '',
+    nota: 0,
+    receita: '',
+    receitaUser: ''
+  }
 
-    Receita={
-      usuario:'',
-      nome: '',
-      usuarioQuePostou: '',
-      imgUrl: '',
-      videoUrl: ''
-    }
+  Receita = {
+    usuario: '',
+    nome: '',
+    usuarioQuePostou: '',
+    imgUrl: '',
+    videoUrl: ''
+  }
 
   receitaLogada: Receita
   logado: Usuario[] = []
-  receitasFavoritas : Receita[] = []
-  comentarios : Comentario[] = []
+  receitasFavoritas: Receita[] = []
+  comentarios: Comentario[] = []
 
 
   ngOnInit(): void {
+    if (this.Comentario.nota > 5) {
+      this.Comentario.nota = 5
+    }
     const receita = window.localStorage.getItem('receitaPagina') || '[]';
     this.receitaLogada = JSON.parse(receita);
     console.log(this.receitaLogada)
@@ -78,62 +81,71 @@ export class paginaDaReceita{
     this.receitasFavoritas = JSON.parse(receitasFavoritas);
 
     this.receitasFavoritas.forEach(element => {
-      if(element.nome === this.receitaLogada.nome && element.usuario === this.Usuario.email){
+      if (element.nome === this.receitaLogada.nome && element.usuario === this.Usuario.email) {
         this.heart = "../../assets/imagens/heart.png"
       }
-      
+
     });
 
     const comentLog = window.localStorage.getItem('comentariosLogado') || '[]';
     this.comentariosLogado = JSON.parse(comentLog);
 
     this.comentarios.forEach(element => {
-      if(element.receitaUser === this.receitaLogada.usuarioQuePostou && element.receita === this.receitaLogada.nome){
+      if (element.receitaUser === this.receitaLogada.usuarioQuePostou && element.receita === this.receitaLogada.nome) {
         this.comentariosLogado.push(element)
       }
     });
-    
+
+    let contador3: number = 0
+    this.comentarios.forEach(element => {
+      if (element.receitaUser === this.receitaLogada.usuario) {
+        this.sum += element.nota
+        contador3 += 1
+      }
+    });
+
+    this.nota = this.sum / contador3
 
   }
 
-  comentariosLogado : Comentario[] = []
+  comentariosLogado: Comentario[] = []
 
   heart: any = "../../assets/imagens/heart-nocolor.png"
   contador: number = 0
-  favorita():void{
-    this.contador+=1
-    let favoritas : Receita = {
-    usuario: this.Usuario.email,
-    usuarioQuePostou: this.receitaLogada.usuario,
-    ingrediente: this.receitaLogada.ingrediente,
-    passoApasso: this.receitaLogada.passoApasso,
-    nome: this.receitaLogada.nome,
-    imgUrl: this.receitaLogada.imgUrl,
-    videoUrl: this.receitaLogada.videoUrl
+  favorita(): void {
+    this.contador += 1
+    let favoritas: Receita = {
+      usuario: this.Usuario.email,
+      usuarioQuePostou: this.receitaLogada.usuario,
+      ingrediente: this.receitaLogada.ingrediente,
+      passoApasso: this.receitaLogada.passoApasso,
+      nome: this.receitaLogada.nome,
+      imgUrl: this.receitaLogada.imgUrl,
+      videoUrl: this.receitaLogada.videoUrl
     }
     let contador2 = 0
     let verificaSeTemOutraIgual: boolean = true
 
     this.receitasFavoritas.forEach(element => {
-      if(element.nome === favoritas.nome && element.usuario === favoritas.usuario){
-          this.receitasFavoritas.splice(contador2,1)
-          verificaSeTemOutraIgual = false
+      if (element.nome === favoritas.nome && element.usuario === favoritas.usuario) {
+        this.receitasFavoritas.splice(contador2, 1)
+        verificaSeTemOutraIgual = false
       }
-      contador2+=1
+      contador2 += 1
     });
 
-    if(verificaSeTemOutraIgual){
+    if (verificaSeTemOutraIgual) {
       this.heart = "../../assets/imagens/heart.png"
       this.receitasFavoritas.push(favoritas)
       window.localStorage.setItem('receitasFavoritas', JSON.stringify(this.receitasFavoritas))
-    }else{
+    } else {
       this.heart = "../../assets/imagens/heart-nocolor.png"
       window.localStorage.setItem('receitasFavoritas', JSON.stringify(this.receitasFavoritas))
     }
   }
 
   ingredienteBol: boolean = false
-  ingredienteOn():void{
+  ingredienteOn(): void {
     this.ingredienteBol = true
     this.passoBol = false
     this.comentBol = false
@@ -141,21 +153,21 @@ export class paginaDaReceita{
   }
 
   passoBol: boolean = false
-  passoOn():void{
+  passoOn(): void {
     this.passoBol = true
     this.ingredienteBol = false
     this.comentBol = false
   }
-  
+
   comentBol: boolean = true
-  comentOn():void{
+  comentOn(): void {
     this.comentBol = true
     this.passoBol = false
     this.ingredienteBol = false
   }
 
-  desligaCard(event){
-    if(event.x > 607 && event.y > 60 || event.y > 20 && event.x < 497){
+  desligaCard(event) {
+    if (event.x > 607 && event.y > 60 || event.y > 20 && event.x < 497) {
       this.mostraMenuconfig = false
       this.mostraMenuCat = false
     }
@@ -163,33 +175,51 @@ export class paginaDaReceita{
 
   mostraMenuconfig: boolean = false
 
-  showMenuconfig():void{
+  showMenuconfig(): void {
     this.mostraMenuconfig = !this.mostraMenuconfig
     this.mostraMenuCat = false
   }
 
   mostraMenuCat: boolean = false
-  showCategorias():void{
+  showCategorias(): void {
     this.mostraMenuCat = !this.mostraMenuCat
     this.mostraMenuconfig = false
   }
 
-  comentar():void{
-    if(this.Comentario.comentario && this.Comentario.nota){
-      const newComent : Comentario = {
-        usuarioQueComentou: this.Usuario.email,
+  comentar(): void {
+    if (this.Comentario.nota > 5) {
+      this.Comentario.nota = 5
+    }
+    if (this.Comentario.comentario && this.Comentario.nota) {
+      const newComent: Comentario = {
+        usuarioQueComentou: this.Usuario.nome,
         fotoUsuario: this.Usuario.foto,
         comentario: this.Comentario.comentario,
         nota: this.Comentario.nota,
         receitaUser: this.receitaLogada.usuarioQuePostou,
         receita: this.receitaLogada.nome
       }
-  
+
       this.comentarios.push(newComent)
       window.localStorage.setItem('comentarios', JSON.stringify(this.comentarios))
+      let contador3: number = 0
+      this.comentarios.forEach(element => {
+        if (element.receita === this.receitaLogada.usuarioQuePostou) {
+          this.sum += element.nota
+          contador3 += 1
+        }
+      });
+
+      this.nota = this.sum / contador3
       this.ngOnInit()
     }
   }
+  nota: number = 0
+  sum: number = 0
+  onChange() {
+    if (this.Comentario.nota > 5) {
+      this.Comentario.nota = 5
+    }
+  }
 
-  
 }

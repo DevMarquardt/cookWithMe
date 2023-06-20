@@ -1,0 +1,34 @@
+.box{
+    display: flex;
+    justify-content: center;
+}
+
+.intobox{
+    background-color: rgba(95, 46, 31, 0.97);
+    width: 60%;
+    height: 27rem;
+    margin-top: 1%;
+    border-radius: 20px;
+    overflow: auto;
+}
+
+.write{
+    margin-top: 2%;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.img{
+    width: 180px;
+    height: 180px;
+    border-radius: 15px;
+    border: 2px solid white;  
+}
+
+.imagens{
+    display: flex;
+    justify-content: center;
+    column-gap: 2rem;
+    flex-wrap: wrap;
+}

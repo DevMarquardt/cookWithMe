@@ -8,6 +8,7 @@ import { PaginaInicialComponent } from "./paginaInicial/paginaInicial.component"
 import { paginaDaReceita } from "./paginaDaReceita/paginaReceita.component";
 import { favoritasComponent } from "./paginaFavoritas/favoritas.component";
 import { perfilComponent } from "./geral/perfil.component";
+import { pgPerfilComponent } from "./perfil/pgperfil.component";
 
 const rotas:Route[] = [
     {
@@ -44,6 +45,11 @@ const rotas:Route[] = [
         path: 'Perfil-Geral',
         component: perfilComponent
     },
+
+    {
+        path: 'Perfil',
+        component: pgPerfilComponent
+    },  
     
     {
         path:'',

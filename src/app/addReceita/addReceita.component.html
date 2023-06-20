@@ -1,4 +1,4 @@
-<body>
+<body (click)="desligaCard($event)">
   <header class="cabecalhoRegister">
 
     <div class="cabecalhoLOGO">
@@ -10,30 +10,45 @@
     </div>
 
     <div class="cabecalhoPAGINAS">
+      <div class="container">
+        <div>
+          <a class="a" href="http://localhost:4200/addReceita">Adicionar Receita</a>
+        </div>
+      </div>
+
       <div>
+        <div (click)="showCategorias()">
+          <div>
+            <a class="a">Categorias</a>
+          </div>
           <div *ngIf="mostraMenuCat" class="itens">
             <h5 class="item">Doces</h5>
             <h5 class="item">Salgados</h5>
           </div>
+        </div>
       </div>
 
       <div>
         <div (click)="showMenuconfig()">
-          <div >
+          <div>
             <a class="a">Configurações</a>
           </div>
           <div *ngIf="mostraMenuconfig" class="itens">
-            <a href="http://localhost:4200/Perfil-Geral"><h5 class="item">Geral</h5></a>
+            <a href="http://localhost:4200/Perfil-Geral">
+              <h5 class="item">Geral</h5>
+            </a>
             <h5 class="item">Privacidade</h5>
-            <a href="http://localhost:4200/Favoritas"><h5 class="item">Favoritos</h5></a>
+            <a href="http://localhost:4200/Favoritas">
+              <h5 class="item">Favoritos</h5>
+            </a>
           </div>
         </div>
       </div>
-      <img class="foto" [src]="Usuario.foto" alt="">
+
+      <div class="container">
+          <a href="http://localhost:4200/Perfil"><img class="foto" [src]="Usuario.foto" alt=""></a>
+      </div>
     </div>
-
-
-
   </header>
   <main>
     <div class="left">

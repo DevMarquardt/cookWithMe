@@ -12,6 +12,7 @@ import { Router, RouterModule } from '@angular/router';
 import { paginaDaReceita } from './paginaDaReceita/paginaReceita.component';
 import { favoritasComponent } from './paginaFavoritas/favoritas.component';
 import { perfilComponent } from './geral/perfil.component';
+import { pgPerfilComponent } from './perfil/pgperfil.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { perfilComponent } from './geral/perfil.component';
     PaginaInicialComponent,
     paginaDaReceita,
     favoritasComponent,
-    perfilComponent
+    perfilComponent,
+    pgPerfilComponent
   ],
   imports: [
     BrowserModule,
