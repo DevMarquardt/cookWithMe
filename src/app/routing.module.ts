@@ -9,6 +9,7 @@ import { paginaDaReceita } from "./paginaDaReceita/paginaReceita.component";
 import { favoritasComponent } from "./paginaFavoritas/favoritas.component";
 import { perfilComponent } from "./geral/perfil.component";
 import { pgPerfilComponent } from "./perfil/pgperfil.component";
+import { pesquisaComponent } from "./Pesquisa/pesquisa.component";
 
 const rotas:Route[] = [
     {
@@ -50,6 +51,11 @@ const rotas:Route[] = [
         path: 'Perfil',
         component: pgPerfilComponent
     },  
+
+    {
+        path: 'Pesquisa',
+        component: pesquisaComponent
+    },
     
     {
         path:'',

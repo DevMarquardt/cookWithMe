@@ -33,6 +33,16 @@
     height: 300px;
     border-radius: 30px;
   }
+
+  .sla > div > video{
+    padding: 6px;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    width: 398px;
+    height: 300px;
+    border-radius: 30px;
+  }
   
   
   .addFotoEnome{

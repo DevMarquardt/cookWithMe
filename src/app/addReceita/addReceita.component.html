@@ -62,7 +62,9 @@
               <img class="receitaImagem" [src]="imageUrl">
             </div>
             <div class="imagemAddReceita" *ngIf="videoUrl">
-              <img class="receitaImagem" [src]="videoUrl">
+              <video class="receitaImagem" controls>
+                <source [src]="videoUrl" type="video/mp4">
+              </video>
             </div>
             
           </div>
@@ -83,7 +85,11 @@
       </div>
     </div>
     <div class="flexConfirma" style="margin-top: -5rem;">
-      <button class="confirmar" (click)="salvarReceita()">CONFIRMAR</button>
+      <select name="" id="" [(ngModel)]="Receita.categoria">
+        <option value="" disabled selected hidden>Tipo da Receita: </option>
+        <option value="salgados">Salgado</option>
+        <option value="doces">Doce</option>
+      </select>
     </div>
     </div>
 
@@ -109,6 +115,9 @@
             style="height: 297px; width: 468px; background-color: rgba(95, 46, 31, 0.99); color: rgb(216, 215, 215);resize: none; border-radius: 15px;"
               [(ngModel)]="Receita.passoApasso" placeholder="Adicionar Passo a Passo"></textarea>
           </div>
+        </div>
+        <div class="flexConfirma" style="margin-top: -5rem;">
+          <button class="confirmar" (click)="salvarReceita()">CONFIRMAR</button>
         </div>
       </div>
     </div>

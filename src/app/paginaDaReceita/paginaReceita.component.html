@@ -69,10 +69,14 @@
       <div class="addFotoEnome">
 
         <div class="sla">
-          <div class="imagemAddReceita">
+          <div class="imagemAddReceita" *ngIf="receitaLogada.imgUrl">
             <img class="receitaImagem" [src]="receitaLogada.imgUrl">
           </div>
-          <img class="receitaImagem" [src]="receitaLogada.videoUrl">
+          <div class="imagemAddReceita" *ngIf="receitaLogada.videoUrl">
+            <video class="receitaImagem" controls>
+              <source [src]="receitaLogada.videoUrl" type="video/mp4">
+            </video>
+          </div>
         </div>
 
       </div>

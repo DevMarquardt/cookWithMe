@@ -13,6 +13,7 @@ import { paginaDaReceita } from './paginaDaReceita/paginaReceita.component';
 import { favoritasComponent } from './paginaFavoritas/favoritas.component';
 import { perfilComponent } from './geral/perfil.component';
 import { pgPerfilComponent } from './perfil/pgperfil.component';
+import { pesquisaComponent } from './Pesquisa/pesquisa.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { pgPerfilComponent } from './perfil/pgperfil.component';
     paginaDaReceita,
     favoritasComponent,
     perfilComponent,
-    pgPerfilComponent
+    pgPerfilComponent,
+    pesquisaComponent
   ],
   imports: [
     BrowserModule,

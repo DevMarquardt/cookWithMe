@@ -8,6 +8,7 @@ interface Receita{
   comentario: string
   imgUrl: string
   videoUrl: string
+  categoria: string
 }
 
 interface Usuario {
@@ -15,6 +16,10 @@ interface Usuario {
   email: string;
   senha: string;
   foto: string;
+}
+
+interface Pesquisa{
+  pesquisa: string
 }
 
 @Component({
@@ -63,7 +68,12 @@ export class PaginaInicialComponent{
       passoApasso: '',
       comentario: '',
       imgUrl: '',
-      videoUrl: ''
+      videoUrl: '',
+      categoria: ''
+    }
+
+    Pesquisa={
+      pesquisa: ''
     }
 
   receitas: Receita[] = []
@@ -84,23 +94,11 @@ export class PaginaInicialComponent{
     const user2 = window.localStorage.getItem('registrados') || '[]';
     this.usuarios = JSON.parse(user2);
 
-    var m = this.receitas.length, t, i;
-
-    this.userFoto.push(this.Usuario)
-
-    while (m) {
-      i = Math.floor(Math.random() * m--);
-
-      t = this.receitas[m];
-      this.receitas[m] = this.receitas[i];
-      this.receitas[i] = t;
-    }
-
-    localStorage.setItem('receitas', JSON.stringify(this.receitas))
-
-    for (let index = 0; index < 4; index++) {
-      this.slide[index] = this.receitas[index];
-    }
+    this.receitas.forEach(element => {
+      if(element.nome === this.Pesquisa.pesquisa || element.categoria === this.Pesquisa.pesquisa){
+        this.slide.push(element)
+      }
+    });
 
   }
 
@@ -128,6 +126,11 @@ export class PaginaInicialComponent{
   showCategorias():void{
     this.mostraMenuCat = !this.mostraMenuCat
     this.mostraMenuconfig = false
+  }
+
+  enterPesquisa(pesquisa){
+    window.location.replace('http://localhost:4200/Pesquisa')
+    localStorage.setItem('Pesquisa', JSON.stringify(pesquisa))
   }
 
 

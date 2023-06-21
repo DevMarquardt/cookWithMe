@@ -56,7 +56,7 @@
   <br>
   <div class="searchBox">
     <div class="search">
-      <input type="text" name="search" placeholder="O que vamos preparar hoje?">
+      <input type="text" name="search" placeholder="O que vamos preparar hoje?" (keydown.enter)="enterPesquisa()">
     </div>
   </div>
   <div>
@@ -66,8 +66,16 @@
   </div>
   <div class="imagens">
     <div *ngFor="let img of slide">
-      <img class="img" [src]="img.imgUrl" alt="" (click)="salvaImagem(img)">
-      <h5>{{img.nome}}</h5>
+      <div *ngIf="img.imgUrl">
+        <img class="img" [src]="img.imgUrl" alt="" (click)="salvaImagem(img)">
+        <h5>{{img.nome}}</h5>
+      </div>
+      <div *ngIf="img.videoUrl">
+        <video class="img" controls (click)="salvaImagem(img)">
+          <source class="vid" [src]="img.videoUrl" type="video/mp4" >
+        </video>
+        <h5>{{img.nome}}</h5>
+      </div>
     </div>
   </div>
 </body>

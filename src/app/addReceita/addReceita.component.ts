@@ -8,6 +8,7 @@ interface Receita{
   comentario: string
   imgUrl: string
   videoUrl: string
+  categoria: string
 }
 
 interface Usuario {
@@ -39,13 +40,12 @@ export class ReceitaComponent{
   videoUrl: any;
 
   onFileSelectedVideo(event: any) {
-    if (event.target.files && event.target.files[0]) {
-      const reader = new FileReader();
-      reader.onload = (e: any) => {
-        this.videoUrl = e.target.result;
-      };
-      reader.readAsDataURL(event.target.files[0]);
-    }
+    const file: File = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = (e: any) => {
+      this.videoUrl = e.target.result;
+    };
+    reader.readAsDataURL(file);
   }
 
     Usuario={
@@ -61,7 +61,8 @@ export class ReceitaComponent{
       passoApasso: '',
       comentario: '',
       imgUrl: '',
-      videoUrl: ''
+      videoUrl: '',
+      categoria: ''
     }
 
   receitas: Receita[] = []
@@ -80,7 +81,7 @@ export class ReceitaComponent{
   }
 
   salvarReceita(){
-    if(!this.Receita.nome || !this.Receita.ingrediente || !this.Receita.passoApasso || !this.imageUrl){
+    if(!this.Receita.nome || !this.Receita.ingrediente || !this.Receita.passoApasso){
       return
     }
     
@@ -91,30 +92,31 @@ export class ReceitaComponent{
       passoApasso: this.Receita.passoApasso,
       comentario: this.Receita.comentario,
       imgUrl: this.imageUrl || '',
-      videoUrl: this.videoUrl || ''
+      videoUrl: this.videoUrl || '',
+      categoria: this.Receita.categoria
     }
     this.receitas.push(receita)
     alert('receita adicionada')
     localStorage.setItem('receitas', JSON.stringify(this.receitas))
-    console.log(receita.ingrediente)
     this.Receita.ingrediente = null
     this.Receita.nome = null
     this.Receita.passoApasso = null
     this.Receita.comentario = null
     this.imageUrl = null
     this.videoUrl = null
+    this.Receita.categoria = null
   }
 
   ingredienteBol: boolean = true
   ingredienteOn():void{
-    this.ingredienteBol = !this.ingredienteBol
+    this.ingredienteBol = true
     this.passoBol = false
 
   }
 
   passoBol: boolean = false
   passoOn():void{
-    this.passoBol = !this.passoBol
+    this.passoBol = true
     this.ingredienteBol = false
   }
 

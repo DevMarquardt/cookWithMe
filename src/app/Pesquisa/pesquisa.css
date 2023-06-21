@@ -3,24 +3,15 @@
     height: 280px;
     border-radius: 15px;
     border: 2px solid white;  
+    margin-top: 3rem;
 }
 
-.vid{
-    width: 180px;
-    height: 180px;
-    border-radius: 15px;
-    border: 2px solid white;  
-}
 .imagens{
     display: flex;
     justify-content: center;
     column-gap: 2rem;
-}
-
-h5{
-    display: flex;
-    justify-content: center;
-    color: white;
+    margin-top: 6%;
+    flex-wrap: wrap;
 }
 
 .search{
@@ -77,8 +68,3 @@ h3{
     display: flex;
     justify-content: center;
 }
-
-
-
-
-
