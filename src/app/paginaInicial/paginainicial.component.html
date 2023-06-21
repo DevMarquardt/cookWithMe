@@ -29,6 +29,22 @@
       </div>
 
       <div>
+        <div (click)="showNotificacao()">
+          <div>
+            <a class="a">Notificações</a>
+          </div>
+          <div *ngIf="mostraNotificacao" class="itens">
+            <div *ngFor="let coment of coemntariosLogado;" style="display: flex; justify-content: first baseline;">
+              <div>
+                <img [src]="coment.fotoUsuario" alt="">
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
         <div (click)="showMenuconfig()">
           <div>
             <a class="a">Configurações</a>

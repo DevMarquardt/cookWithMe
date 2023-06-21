@@ -45,7 +45,7 @@ export class privacidadeComponent {
         email: '',
         senha: '',
         foto: '',
-        oculta: false
+        oculta:  false
     }
 
     Receita = {

@@ -23,6 +23,34 @@
     color: whitesmoke;
 }
 
+.nomeDaReceita{
+    color: white;
+    display: flex;
+    justify-content:space-between;
+    font-size: xx-large;
+  }
+
+  .quebralinha{
+    display: flex;
+    word-wrap: break-word;
+    width: 500px;
+    justify-content: center;
+
+  }
+  .nomeElike{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .comentariosBox{
+    color: rgb(216, 214, 214);
+    width: 7.5rem;
+    height: 15rem;
+    background-color: rgba(95, 46, 31, 0.99);
+    border-radius: 20px;
+    overflow: auto;
+  }
+
 .search{
     display: flex;
     align-items: center;

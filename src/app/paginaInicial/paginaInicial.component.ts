@@ -19,6 +19,15 @@ interface Usuario {
   foto: string;
 }
 
+interface Comentario {
+  fotoUsuario: string;
+  usuarioQueComentou: string;
+  comentario: string;
+  nota: number;
+  receita: string;
+  receitaUser: string;
+}
+
 interface Pesquisa{
   pesquisa: string
 }
@@ -82,6 +91,7 @@ export class PaginaInicialComponent{
   slide: Receita[] = []
   receitaPagina: Receita[] = []
   userFoto: Usuario[] = []
+  comentarios: Comentario[] = []
 
 
 
@@ -113,6 +123,9 @@ export class PaginaInicialComponent{
       this.slide[index] = this.receitas[index];
     }
 
+    const coment = window.localStorage.getItem('comentarios') || '[]';
+    this.comentarios = JSON.parse(coment);
+
   }
 
   salvaImagem(img){
@@ -125,6 +138,7 @@ export class PaginaInicialComponent{
     if(event.x > 607 && event.y > 60 || event.y > 20 && event.x < 497){
       this.mostraMenuconfig = false
       this.mostraMenuCat = false
+      this.mostraNotificacao = false
     }
   }
 
@@ -133,17 +147,38 @@ export class PaginaInicialComponent{
   showMenuconfig():void{
     this.mostraMenuconfig = !this.mostraMenuconfig
     this.mostraMenuCat = false
+    this.mostraNotificacao = false
   }
 
-  mostraMenuCat; boolean = false
+  mostraMenuCat: boolean = false
   showCategorias():void{
     this.mostraMenuCat = !this.mostraMenuCat
     this.mostraMenuconfig = false
+    this.mostraNotificacao = false
   }
 
   enterPesquisa(){
     window.location.replace('http://localhost:4200/Pesquisa')
     localStorage.setItem('Pesquisa', JSON.stringify(this.Pesquisa.pesquisa))
+  }
+
+  comentariosLogado: Comentario[] = []
+
+
+  mostraNotificacao: boolean = false
+  showNotificacao():void{
+    this.mostraNotificacao = !this.mostraNotificacao
+    this.mostraMenuconfig = false
+    this.mostraMenuCat = false
+
+    this.comentarios.forEach(element => {
+      this.receitas.forEach(elementRec => {
+        if(elementRec.nome === element.receita && elementRec.usuario === this.Usuario.email){
+          this.comentariosLogado.push(element)
+        }
+      });
+    });
+
   }
 
 
