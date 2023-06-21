@@ -109,6 +109,7 @@ export class ReceitaComponent{
     this.imageUrl = null
     this.videoUrl = null
     this.Receita.categoria = null
+    window.location.replace("http://localhost:4200/Inicio")
   }
 
   ingredienteBol: boolean = true

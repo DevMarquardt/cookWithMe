@@ -57,17 +57,21 @@
           <div class="boxColor">
               <div class="box">
                   <div class="name">
-                      <h2 style="margin-left: 17.3rem; text-decoration: underline;">Privacidade</h2>
+                      <h2 style="margin-left: 18.5rem; text-decoration: underline;">Privacidade</h2>
                       <div style="margin-right: 10px;">
                           <a href="http://localhost:4200/Inicio"><img src="../../assets/imagens/voltar.png" width="35px" alt=""></a>
                       </div>
                   </div>
-                  <div class="inputs">
-                    <button (click)="ocultarReceitas()">Ocultar minhas receitas</button>
-                    <button (click)="sair()">Sair da conta</button>
+                  <div class="flexConfirma2">
+                    <button class="inputp" (click)="ocultarReceitas()">Ocultar minhas receitas</button>
+                    <br>
+                    <button class="inputp" (click)="TirarOcultarReceitas()">Mostrar minhas receitas</button>
+                    <br>
+                    <button class="inputp" (click)="sair()">Sair da conta</button>
                   </div>
-                  <div class="buttonSalvar">
-                      <button (click)="novoUser(Csenha)">salvar alterações</button>
+                  <br><br><br><br><br>
+                  <div class="flexConfirma">
+                      <button class="confirmar" (click)="novoUser(Csenha)">salvar alterações</button>
                   </div>
               </div>
           </div>  

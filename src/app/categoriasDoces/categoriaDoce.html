@@ -1,55 +1,57 @@
 <body (click)="desligaCard($event)">
-    <header class="cabecalhoRegister">
-  
-      <div class="cabecalhoLOGO">
-        <div>
-          <div class="a">
-            <a class="logo" href="http://localhost:4200/Inicio">Cook With Me</a>
-          </div>
+  <header class="cabecalhoRegister">
+
+    <div class="cabecalhoLOGO">
+      <div>
+        <div class="a">
+          <a class="logo" href="http://localhost:4200/Inicio">Cook With Me</a>
         </div>
       </div>
-  
-      <div class="cabecalhoPAGINAS">
-        <div class="container">
+    </div>
+
+    <div class="cabecalhoPAGINAS">
+      <div class="container">
+        <div>
+          <a class="a" href="http://localhost:4200/addReceita">Adicionar Receita</a>
+        </div>
+      </div>
+
+      <div>
+        <div (click)="showCategorias()">
           <div>
-            <a class="a" href="http://localhost:4200/addReceita">Adicionar Receita</a>
+            <a class="a">Categorias</a>
           </div>
-        </div>
-  
-        <div>
-          <div (click)="showCategorias()">
-            <div>
-              <a class="a">Categorias</a>
-            </div>
-            <div *ngIf="mostraMenuCat" class="itens">
-              <h5 class="item">Doces</h5>
-              <h5 class="item">Salgados</h5>
-            </div>
+          <div *ngIf="mostraMenuCat" class="itens">
+            <a href="http://localhost:4200/categoria-Doces"><h5 class="item">Doces</h5></a>
+            <a href="http://localhost:4200/categoria-Salgados"><h5 class="item">Salgados</h5></a>
           </div>
-        </div>
-  
-        <div>
-          <div (click)="showMenuconfig()">
-            <div>
-              <a class="a">Configurações</a>
-            </div>
-            <div *ngIf="mostraMenuconfig" class="itens">
-              <a href="http://localhost:4200/Perfil-Geral">
-                <h5 class="item">Geral</h5>
-              </a>
-              <h5 class="item">Privacidade</h5>
-              <a href="http://localhost:4200/Favoritas">
-                <h5 class="item">Favoritos</h5>
-              </a>
-            </div>
-          </div>
-        </div>
-  
-        <div class="container">
-            <a href="http://localhost:4200/Perfil"><img class="foto" [src]="Usuario.foto" alt=""></a>
         </div>
       </div>
-    </header>
+
+      <div>
+        <div (click)="showMenuconfig()">
+          <div>
+            <a class="a">Configurações</a>
+          </div>
+          <div *ngIf="mostraMenuconfig" class="itens">
+            <a href="http://localhost:4200/Perfil-Geral">
+              <h5 class="item">Geral</h5>
+            </a>
+            <a href="http://localhost:4200/privacidade"><h5 class="item">Privacidade</h5></a>
+            <a href="http://localhost:4200/Favoritas">
+              <h5 class="item">Favoritos</h5>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div *ngFor="let imgs of userFoto">
+          <a href="http://localhost:4200/Perfil"><img class="foto" [src]="imgs.foto" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </header> 
     
     <br>
     <div class="searchBox">
@@ -57,7 +59,7 @@
     <div>
       <h1 style="margin-top: 20px; font-size: 30px; font-size: 69px;
       font-family: Farro;
-      font-weight: 600; text-decoration: underline;">Salgados:</h1>
+      font-weight: 600; text-decoration: underline;">Doces:</h1>
     </div>
     <div>
       <h1 style="margin-top: 20px; font-size: 30px; font-size: 39px;
