@@ -54,3 +54,31 @@
     display: flex;
     justify-content: end;
 }
+
+.confirmar{
+    display: block;
+    width: 230px;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: black;
+    border: black;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  
+  .confirmar:hover{
+    background-color: #45a049;
+  }
+  
+  .flexConfirma{
+    display: flex;
+    height: 10rem;
+    flex-direction: column;
+    align-items: center;
+    margin: 0%;
+  }
+
+  .confGeral{
+    margin-left: 15rem;
+  }

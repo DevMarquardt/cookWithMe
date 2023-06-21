@@ -22,8 +22,8 @@
             <a class="a">Categorias</a>
           </div>
           <div *ngIf="mostraMenuCat" class="itens">
-            <h5 class="item">Doces</h5>
-            <h5 class="item">Salgados</h5>
+            <a href="http://localhost:4200/categoria-Doces"><h5 class="item">Doces</h5></a>
+            <a href="http://localhost:4200/categoria-Salgados"><h5 class="item">Salgados</h5></a>
           </div>
         </div>
       </div>
@@ -132,11 +132,16 @@
                 </div>
               </div>
             </div>
-
           </div>
-          <input type="text" name="" id="" [(ngModel)]="Comentario.comentario">
-          <input type="number" max="5" maxlength="0" [(ngModel)]="Comentario.nota">
-          <button (click)="comentar()">enviar</button>
+        </div>
+        <div class="boxComentar">
+          <div class="comentar">
+            <input placeholder="Comente aqui!" type="text" name="" id="" [(ngModel)]="Comentario.comentario">
+            <input class="nota" type="number" max="5" maxlength="0" [(ngModel)]="Comentario.nota">
+            <div class="confirmarRegistro">
+                <button class="confirmar" (click)="comentar()">Comentar</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
