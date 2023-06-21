@@ -1,0 +1,56 @@
+.box{
+    margin-top: 5%;
+    width: 50%;
+    height: 29.5rem;
+    background-color: #5F2E1F;
+    border-radius: 20px;
+
+}
+
+.red{
+    border-color: red;
+}
+
+.green{
+    border-color: green;
+}
+
+.boxColor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.name{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-family: 'Farro';
+    font-style: normal;
+    line-height: 32px;
+}
+
+.inputs{
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.inputs > h3 > input{
+    border-radius: 10px;
+    height: 2rem;
+}
+
+.buttonSalvar > button{
+    border-radius: 10px;
+    background-color: #8FFF67;
+    height: 2rem;
+}
+
+.buttonSalvar{
+    margin: 10px;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: end;
+}

@@ -14,6 +14,9 @@ import { favoritasComponent } from './paginaFavoritas/favoritas.component';
 import { perfilComponent } from './geral/perfil.component';
 import { pgPerfilComponent } from './perfil/pgperfil.component';
 import { pesquisaComponent } from './Pesquisa/pesquisa.component';
+import { categoriaSalgadoComponent } from './categoriasSalgadp/categoriaSalgado.component';
+import { categoriaDoceComponent } from './categoriasDoces/categoriaSDoce.component';
+import { privacidadeComponent } from './privacidade/privacidade.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { pesquisaComponent } from './Pesquisa/pesquisa.component';
     favoritasComponent,
     perfilComponent,
     pgPerfilComponent,
-    pesquisaComponent
+    pesquisaComponent,
+    categoriaSalgadoComponent,
+    categoriaDoceComponent,
+    privacidadeComponent
   ],
   imports: [
     BrowserModule,

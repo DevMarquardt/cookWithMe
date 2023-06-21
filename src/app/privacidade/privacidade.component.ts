@@ -8,16 +8,6 @@ interface Usuario {
     foto: string;
 }
 
-interface ReceitaFav {
-    usuario: string
-    usuarioQuePostou: string
-    nome: string
-    ingrediente: string
-    passoApasso: string
-    comentario: string
-    imgUrl: string
-    videoUrl: string
-}
 
 interface Receita{
     usuario: string
@@ -32,11 +22,11 @@ interface Receita{
   }
 
 @Component({
-    templateUrl: 'perfilGeral.html',
-    styleUrls: ['perfil.css']
+    templateUrl: 'privacidade.html',
+    styleUrls: ['privacidade.css']
 })
 
-export class perfilComponent {
+export class privacidadeComponent {
 
     imageUrl: any;
 
@@ -81,57 +71,7 @@ export class perfilComponent {
     UserAntigo: Usuario
 
     usuarios: Usuario[] = []
-    receitasFav: ReceitaFav[] = []
     receitas: Receita[] = []
-
-
-    novoUser(Csenha): void {
-
-        const user3 = window.localStorage.getItem('logado') || '[]';
-        this.UserAntigo = JSON.parse(user3);
-
-        if (Csenha !== this.Usuario.senha) {
-            alert("As senhas não coincidem")
-            return
-        }
-
-        this.Usuario.foto = this.imageUrl
-        
-
-        this.usuarios.forEach(element => {
-            if (element.email == this.UserAntigo.email) {
-                console.log(this.UserAntigo.email)
-                element.nome = this.Usuario.nome
-                element.email = this.Usuario.email
-                element.senha = this.Usuario.senha
-                element.foto = this.imageUrl
-            }
-        });
-
-        this.receitas.forEach(element => {
-            if (element.usuario == this.UserAntigo.email) {
-                element.usuario = this.Usuario.email
-            }
-        });
-
-
-        this.receitasFav.forEach(element => {
-            if (element.usuarioQuePostou == this.UserAntigo.email) {
-                element.usuario = this.Usuario.email
-                element.usuarioQuePostou = this.Usuario.email
-            }
-        });
-
-        localStorage.setItem("logado", JSON.stringify(this.Usuario))
-        localStorage.setItem("receitas", JSON.stringify(this.receitas))
-        localStorage.setItem("registrados", JSON.stringify(this.usuarios))
-        localStorage.setItem("receitasFavoritas", JSON.stringify(this.receitasFav))
-        alert('Recadastrado')
-        this.Usuario.nome = null
-        this.Usuario.email = null
-        this.Usuario.senha = null
-        Csenha = null
-    }
 
     ngOnInit(): void {
 
@@ -140,9 +80,6 @@ export class perfilComponent {
 
         const user2 = window.localStorage.getItem('registrados') || '[]';
         this.usuarios = JSON.parse(user2);
-
-        const receita = window.localStorage.getItem('receitasFavoritas') || '[]';
-        this.receitasFav = JSON.parse(receita);
 
         const receita2 = window.localStorage.getItem('receitas') || '[]';
         this.receitas = JSON.parse(receita2);
@@ -168,5 +105,20 @@ export class perfilComponent {
         this.mostraMenuCat = !this.mostraMenuCat
         this.mostraMenuconfig = false
       }
+
+      sair(){
+            localStorage.setItem('logado', JSON.stringify(null))
+            window.location.replace('http://localhost:4200/registrar')
+      }
+
+      ocultarReceitas(){
+        this.receitas.forEach(element => {
+            if(element.usuario === this.Usuario.email){
+                element.oculta = true
+            }
+        });
+      }
+
+
 
 }

@@ -71,7 +71,7 @@ header{
 .item{
     cursor: pointer;
     padding: 5px 0;
-    color: #D9D9D9;
+    color: black;
 }
 
 .item:hover{

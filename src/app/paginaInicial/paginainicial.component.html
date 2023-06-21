@@ -22,8 +22,8 @@
             <a class="a">Categorias</a>
           </div>
           <div *ngIf="mostraMenuCat" class="itens">
-            <h5 class="item">Doces</h5>
-            <h5 class="item">Salgados</h5>
+            <a href="http://localhost:4200/categoria-Doces"><h5 class="item">Doces</h5></a>
+            <a href="http://localhost:4200/categoria-Salgados"><h5 class="item">Salgados</h5></a>
           </div>
         </div>
       </div>
@@ -37,7 +37,7 @@
             <a href="http://localhost:4200/Perfil-Geral">
               <h5 class="item">Geral</h5>
             </a>
-            <h5 class="item">Privacidade</h5>
+            <a href="http://localhost:4200/privacidade"><h5 class="item">Privacidade</h5></a>
             <a href="http://localhost:4200/Favoritas">
               <h5 class="item">Favoritos</h5>
             </a>
@@ -56,7 +56,7 @@
   <br>
   <div class="searchBox">
     <div class="search">
-      <input type="text" name="search" placeholder="O que vamos preparar hoje?" (keydown.enter)="enterPesquisa()">
+      <input type="text" name="search" placeholder="O que vamos preparar hoje?" (keydown.enter)="enterPesquisa()" [(ngModel)]="Pesquisa.pesquisa">
     </div>
   </div>
   <div>
@@ -68,13 +68,13 @@
     <div *ngFor="let img of slide">
       <div *ngIf="img.imgUrl">
         <img class="img" [src]="img.imgUrl" alt="" (click)="salvaImagem(img)">
-        <h5>{{img.nome}}</h5>
+        <h5 class="nameImage">{{img.nome}}</h5>
       </div>
       <div *ngIf="img.videoUrl">
         <video class="img" controls (click)="salvaImagem(img)">
           <source class="vid" [src]="img.videoUrl" type="video/mp4" >
         </video>
-        <h5>{{img.nome}}</h5>
+        <h5 class="nameImage">{{img.nome}}</h5>
       </div>
     </div>
   </div>

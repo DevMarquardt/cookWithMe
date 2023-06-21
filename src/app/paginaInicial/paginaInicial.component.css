@@ -17,10 +17,10 @@
     column-gap: 2rem;
 }
 
-h5{
+.nameImage{
     display: flex;
     justify-content: center;
-    color: white;
+    color: whitesmoke;
 }
 
 .search{

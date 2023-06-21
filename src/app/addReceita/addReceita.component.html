@@ -54,6 +54,13 @@
     <div class="left">
       <div class="a5">
         <input class="nomeDaReceita" type="text" placeholder="Nome da Receita" [(ngModel)]="Receita.nome">
+        <div style="margin-bottom: 1rem;">
+          <select name="" id="" [(ngModel)]="Receita.categoria" class="selectcat">
+            <option value="" disabled selected hidden>Tipo da Receita: </option>
+            <option value="salgados">Salgado</option>
+            <option value="doces">Doce</option>
+          </select>
+        </div>
         <div class="addFotoEnome">
   
           <div class="sla">
@@ -84,13 +91,6 @@
         </div>
       </div>
     </div>
-    <div class="flexConfirma" style="margin-top: -5rem;">
-      <select name="" id="" [(ngModel)]="Receita.categoria">
-        <option value="" disabled selected hidden>Tipo da Receita: </option>
-        <option value="salgados">Salgado</option>
-        <option value="doces">Doce</option>
-      </select>
-    </div>
     </div>
 
     <div class="right">
@@ -116,7 +116,7 @@
               [(ngModel)]="Receita.passoApasso" placeholder="Adicionar Passo a Passo"></textarea>
           </div>
         </div>
-        <div class="flexConfirma" style="margin-top: -5rem;">
+        <div class="flexConfirma">
           <button class="confirmar" (click)="salvarReceita()">CONFIRMAR</button>
         </div>
       </div>

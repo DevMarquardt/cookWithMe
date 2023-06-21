@@ -10,6 +10,9 @@ import { favoritasComponent } from "./paginaFavoritas/favoritas.component";
 import { perfilComponent } from "./geral/perfil.component";
 import { pgPerfilComponent } from "./perfil/pgperfil.component";
 import { pesquisaComponent } from "./Pesquisa/pesquisa.component";
+import { categoriaSalgadoComponent } from "./categoriasSalgadp/categoriaSalgado.component";
+import { categoriaDoceComponent } from "./categoriasDoces/categoriaSDoce.component";
+import { privacidadeComponent } from "./privacidade/privacidade.component";
 
 const rotas:Route[] = [
     {
@@ -55,6 +58,21 @@ const rotas:Route[] = [
     {
         path: 'Pesquisa',
         component: pesquisaComponent
+    },
+
+    {
+        path: 'categoria-Salgados',
+        component: categoriaSalgadoComponent
+    },
+
+    {
+        path: 'categoria-Doces',
+        component: categoriaDoceComponent
+    },
+
+    {
+        path: 'privacidade',
+        component: privacidadeComponent
     },
     
     {

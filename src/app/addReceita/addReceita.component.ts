@@ -9,6 +9,7 @@ interface Receita{
   imgUrl: string
   videoUrl: string
   categoria: string
+  oculta: boolean
 }
 
 interface Usuario {
@@ -62,7 +63,8 @@ export class ReceitaComponent{
       comentario: '',
       imgUrl: '',
       videoUrl: '',
-      categoria: ''
+      categoria: '',
+      oculta: false
     }
 
   receitas: Receita[] = []
@@ -81,7 +83,8 @@ export class ReceitaComponent{
   }
 
   salvarReceita(){
-    if(!this.Receita.nome || !this.Receita.ingrediente || !this.Receita.passoApasso){
+    if(!this.Receita.nome || !this.Receita.ingrediente || !this.Receita.passoApasso || !this.Receita.categoria || !this.imageUrl && !this.videoUrl){
+      alert('verifique se preencheu todos os itens corretamente')
       return
     }
     
@@ -93,7 +96,8 @@ export class ReceitaComponent{
       comentario: this.Receita.comentario,
       imgUrl: this.imageUrl || '',
       videoUrl: this.videoUrl || '',
-      categoria: this.Receita.categoria
+      categoria: this.Receita.categoria,
+      oculta: false
     }
     this.receitas.push(receita)
     alert('receita adicionada')

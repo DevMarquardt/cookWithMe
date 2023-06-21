@@ -12,6 +12,11 @@
   margin-bottom: 10px;
 }
 
+.selectcat{
+  border-radius: 20px;
+  width: 10rem;
+}
+
 .sla > div > img{
   padding: 10px;
   max-width: 100%;
@@ -48,7 +53,6 @@ main{
 .left{  
   float: left;
   margin: 20px;
-
 }
 
 .confirmar{
@@ -70,8 +74,9 @@ main{
 .flexConfirma{
   display: flex;
   height: 10rem;
-  flex-direction: column-reverse;
+  flex-direction: column;
   align-items: center;
+  margin: 0%;
 }
 
 .imagemEvideo{

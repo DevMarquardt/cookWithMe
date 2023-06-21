@@ -22,8 +22,8 @@
             <a class="a">Categorias</a>
           </div>
           <div *ngIf="mostraMenuCat" class="itens">
-            <h5 class="item">Doces</h5>
-            <h5 class="item">Salgados</h5>
+            <a href="http://localhost:4200/categoria-Doces"><h5 class="item">Doces</h5></a>
+            <a href="http://localhost:4200/categoria-Salgados"><h5 class="item">Salgados</h5></a>
           </div>
         </div>
       </div>
@@ -37,7 +37,7 @@
             <a href="http://localhost:4200/Perfil-Geral">
               <h5 class="item">Geral</h5>
             </a>
-            <h5 class="item">Privacidade</h5>
+            <a href="http://localhost:4200/privacidade"><h5 class="item">Privacidade</h5></a>
             <a href="http://localhost:4200/Favoritas">
               <h5 class="item">Favoritos</h5>
             </a>
@@ -46,7 +46,9 @@
       </div>
 
       <div class="container">
-          <a href="http://localhost:4200/Perfil"><img class="foto" [src]="Usuario.foto" alt=""></a>
+        <div *ngFor="let imgs of userFoto">
+          <a href="http://localhost:4200/Perfil"><img class="foto" [src]="imgs.foto" alt=""></a>
+        </div>
       </div>
     </div>
   </header>

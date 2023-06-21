@@ -53,12 +53,56 @@
     
     <br>
     <div class="searchBox">
-      <div class="search">
-        <input type="text" name="search" placeholder="O que vamos preparar hoje?" (keydown.enter)="enterPesquisa(Pesquisa.pesquisa)" [(ngModel)]="Pesquisa.pesquisa">
-      </div>
     </div>
     <div>
-      <h1 style="margin-top: 60px;">Resultados encontrados:</h1>
+      <h1 style="margin-top: 20px; font-size: 30px; font-size: 69px;
+      font-family: Farro;
+      font-weight: 600; text-decoration: underline;">Salgados:</h1>
+    </div>
+    <div>
+      <h1 style="margin-top: 20px; font-size: 30px; font-size: 39px;
+      font-family: Farro;
+      font-weight: 600; text-decoration: underline;">Novidades</h1>
+    </div>
+    <div class="imagens">
+      <div *ngFor="let img of slide | slice:0:5; index as indice">
+        <div *ngIf="img.imgUrl">
+          <img class="img" [src]="img.imgUrl" alt="" (click)="salvaImagem(img)">
+          <h5 class="nameImage">{{img.nome}}</h5>
+        </div>
+        <div *ngIf="img.videoUrl">
+          <video class="img" controls (click)="salvaImagem(img)">
+            <source class="vid" [src]="img.videoUrl" type="video/mp4" >
+          </video>
+          <h5 class="nameImage">{{img.nome}}</h5>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h1 style="margin-top: 20px; font-size: 30px; font-size: 39px;
+      font-family: Farro;
+      font-weight: 600; text-decoration: underline;">Populares</h1>
+    </div>
+    <div class="imagens">
+      <div *ngFor="let img of embaralhaDnv | slice:0:5; index as indice">
+        <div *ngIf="img.imgUrl">
+          <img class="img" [src]="img.imgUrl" alt="" (click)="salvaImagem(img)">
+          <h5 class="nameImage">{{img.nome}}</h5>
+        </div>
+        <div *ngIf="img.videoUrl">
+          <video class="img" controls (click)="salvaImagem(img)">
+            <source class="vid" [src]="img.videoUrl" type="video/mp4" >
+          </video>
+          <h5 class="nameImage">{{img.nome}}</h5>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h1 style="margin-top: 20px; font-size: 30px; font-size: 39px;
+      font-family: Farro;
+      font-weight: 600; text-decoration: underline;">Todas</h1>
     </div>
     <div class="imagens">
       <div *ngFor="let img of slide">

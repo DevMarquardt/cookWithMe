@@ -1,6 +1,6 @@
 .img{
-    width: 280px;
-    height: 280px;
+    width: 220px;
+    height: 200px;
     border-radius: 15px;
     border: 2px solid white;  
     margin-top: 3rem;
@@ -10,7 +10,6 @@
     display: flex;
     justify-content: center;
     column-gap: 2rem;
-    margin-top: 6%;
     flex-wrap: wrap;
 }
 

@@ -9,6 +9,7 @@ interface Receita{
   imgUrl: string
   videoUrl: string
   categoria: string
+  oculta: boolean
 }
 
 interface Usuario {
@@ -94,11 +95,23 @@ export class PaginaInicialComponent{
     const user2 = window.localStorage.getItem('registrados') || '[]';
     this.usuarios = JSON.parse(user2);
 
-    this.receitas.forEach(element => {
-      if(element.nome === this.Pesquisa.pesquisa || element.categoria === this.Pesquisa.pesquisa){
-        this.slide.push(element)
-      }
-    });
+    var m = this.receitas.length, t, i;
+
+    this.userFoto.push(this.Usuario)
+
+    while (m) {
+      i = Math.floor(Math.random() * m--);
+
+      t = this.receitas[m];
+      this.receitas[m] = this.receitas[i];
+      this.receitas[i] = t;
+    }
+
+    localStorage.setItem('receitas', JSON.stringify(this.receitas))
+
+    for (let index = 0; index < 4; index++) {
+      this.slide[index] = this.receitas[index];
+    }
 
   }
 
@@ -128,9 +141,9 @@ export class PaginaInicialComponent{
     this.mostraMenuconfig = false
   }
 
-  enterPesquisa(pesquisa){
+  enterPesquisa(){
     window.location.replace('http://localhost:4200/Pesquisa')
-    localStorage.setItem('Pesquisa', JSON.stringify(pesquisa))
+    localStorage.setItem('Pesquisa', JSON.stringify(this.Pesquisa.pesquisa))
   }
 
 

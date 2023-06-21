@@ -25,11 +25,11 @@ interface Receita{
   
 
 @Component({
-    templateUrl: 'pesquisa.html',
-    styleUrls: ['pesquisa.css']
+    templateUrl: 'categoriaDoce.html',
+    styleUrls: ['categoriaDoce.css']
 })
 
-export class pesquisaComponent{
+export class categoriaDoceComponent{
 
 
     Receita={
@@ -58,7 +58,7 @@ export class pesquisaComponent{
     usuarios: Usuario[] = []
     slide: Receita[] = []
     receitaPagina: Receita[] = []
-    userFoto: Usuario[] = []
+    embaralhaDnv: Receita[] = []
   
   
   
@@ -71,12 +71,40 @@ export class pesquisaComponent{
       
       const pesquisa = window.localStorage.getItem('Pesquisa') || '[]';
       this.Pesquisa.pesquisa = JSON.parse(pesquisa);
-    
-      this.receitas.forEach(element => {
-        if(element.nome === this.Pesquisa.pesquisa || element.categoria === this.Pesquisa.pesquisa){
-            this.slide.push(element)
+
+        var m = this.receitas.length, t, i;
+
+        while (m) {
+        i = Math.floor(Math.random() * m--);
+
+        t = this.receitas[m];
+        this.receitas[m] = this.receitas[i];
+        this.receitas[i] = t;
         }
-    });
+
+        localStorage.setItem('receitas', JSON.stringify(this.receitas))
+
+        this.receitas.forEach(element => {
+            if(element.categoria === "doces"){
+                this.slide.push(element)
+            }
+        });
+
+        m = this.receitas.length, t, i;
+
+        while (m) {
+            i = Math.floor(Math.random() * m--);
+    
+            t = this.receitas[m];
+            this.receitas[m] = this.receitas[i];
+            this.receitas[i] = t;
+            }
+    
+            this.receitas.forEach(element => {
+                if(element.categoria === "doces"){
+                    this.embaralhaDnv.push(element)
+                }
+            });
     }
   
     salvaImagem(img){
