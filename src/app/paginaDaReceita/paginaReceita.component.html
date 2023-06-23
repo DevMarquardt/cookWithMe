@@ -81,7 +81,7 @@
 
       </div>
       <div class="postadaPor">
-        <h3 style="color: white;">{{ (sum/contadorComentarios).toFixed(1)}}/5</h3>
+        <h3 style="color: white;">{{ (sum/contadorComentarios).toFixed(1)}}/5 <img src="../../assets/imagens/star.png" width="20px" alt=""></h3>
       </div>
       <div class="postadaPor">
         <h3 style="color: white;">Postada por: {{receitaLogada.usuario}}</h3>
@@ -124,7 +124,7 @@
                     <h5>{{comentario.usuarioQueComentou}}</h5>
                   </div>
                   <div>
-                    <h5>{{comentario.nota}}/5</h5>
+                    <h5>{{comentario.nota}}/5 <img src="../../assets/imagens/star.png" width="13px" alt=""></h5>
                   </div>
                 </div>
                 <div class="coment" style="display: flex; justify-content: first baseline; margin-left: -10rem;">
@@ -133,13 +133,13 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="boxComentar">
-          <div class="comentar">
-            <input placeholder="Comente aqui!" type="text" name="" id="" [(ngModel)]="Comentario.comentario">
-            <input class="nota" type="number" max="5" maxlength="0" [(ngModel)]="Comentario.nota">
-            <div class="confirmarRegistro">
-                <button class="confirmar" (click)="comentar()">Comentar</button>
+          <div class="boxComentar">
+            <div class="comentar">
+              <input placeholder="Comente aqui!" type="text" name="" id="" [(ngModel)]="Comentario.comentario">
+              <input class="nota" type="number" max="5" maxlength="0" [(ngModel)]="Comentario.nota">
+              <div class="confirmarRegistro">
+                  <button class="confirmar" (click)="comentar()">Comentar</button>
+              </div>
             </div>
           </div>
         </div>

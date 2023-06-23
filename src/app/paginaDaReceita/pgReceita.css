@@ -112,13 +112,15 @@
     display: flex;
     justify-content: space-evenly;
     cursor: pointer;
+    margin-bottom: -19px;
   }
   
   .opcao{
     background-color: rgba(95, 46, 31, 0.99); 
     color: rgb(216, 215, 215);
-    border-radius: 50px;
-    width: 13rem;
+    border-top-left-radius: 20px ;
+    border-top-right-radius: 20px;
+    width: 10rem;
     height: 2rem;
     display: flex;
     align-items: center;
@@ -161,8 +163,9 @@
   justify-content: center;
   margin-top: 5px;
   background-color: rgba(95, 46, 31, 0.99);
-  border-radius: 50px;
-  width: 35rem;
+  border-end-end-radius: 20px;
+  border-end-start-radius: 20px;
+  width: 37.8rem;
 }
 
 input {
@@ -176,10 +179,6 @@ input {
   font-size: 15px;
 }
 
-.boxComentar{
-  display: flex;
-  justify-content: center;
-}
 
 .confirmar{
   width: 70px;
@@ -189,6 +188,10 @@ input {
   border: black;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.boxComentar{
+  margin-top: -25px;
 }
 
 
