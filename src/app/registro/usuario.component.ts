@@ -56,7 +56,7 @@ export class userComponent {
 
       let verificaUsuariosIguais: boolean = true
       this.usuarios.forEach(element => {
-        if(element.email === this.Usuario.email && element.nome === element.email){
+        if(element.email === 'Administrador@gmail.com'){
           verificaUsuariosIguais = false
         }
       });
@@ -69,7 +69,7 @@ export class userComponent {
         }
         this.usuarios.push(user)
         localStorage.setItem("registrados", JSON.stringify(this.usuarios))
-      }
+      
         
         const receita: Receita={
           usuario: 'Administrador',
@@ -395,6 +395,7 @@ Sirva a sopa de abóbora quente. Se desejar, decore com sementes de abóbora tor
         }
         this.receitas.push(receita9)
         localStorage.setItem('receitas', JSON.stringify(this.receitas))
+      }
     }
 
     nome: string
