@@ -159,7 +159,7 @@ export class paginaDaReceita {
     }
   }
 
-  ingredienteBol: boolean = false
+  ingredienteBol: boolean = true
   ingredienteOn(): void {
     this.ingredienteBol = true
     this.passoBol = false
@@ -174,7 +174,7 @@ export class paginaDaReceita {
     this.comentBol = false
   }
 
-  comentBol: boolean = true
+  comentBol: boolean = false
   comentOn(): void {
     this.comentBol = true
     this.passoBol = false
