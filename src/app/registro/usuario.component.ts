@@ -75,7 +75,7 @@ export class userComponent {
       
         
         const receita: Receita={
-          usuario: 'Administrador',
+          usuario: 'Administrador@gmail.com',
           nome: 'Spaghetti à Bolonhesa',
           ingrediente: `
                 Ingredientes:
@@ -108,7 +108,7 @@ export class userComponent {
         localStorage.setItem('receitas', JSON.stringify(this.receitas))
         
         const receita2: Receita={
-          usuario: 'Administrador',
+          usuario: 'Administrador@gmail.com',
           nome: 'Brownie de Chocolate',
           ingrediente: `
             Ingredientes:
@@ -152,7 +152,7 @@ export class userComponent {
         localStorage.setItem('receitas', JSON.stringify(this.receitas))
 
         const receita3: Receita={
-          usuario: 'Administrador',
+          usuario: 'Administrador@gmail.com',
           nome: 'Sopa de Abóbora',
           ingrediente: `
           1 abóbora média, descascada e cortada em cubos
@@ -174,13 +174,13 @@ export class userComponent {
           
           Deixe a sopa ferver e, em seguida, reduza o fogo para médio-baixo. Tampe a panela e deixe cozinhar por cerca de 20-25 minutos, ou até que a abóbora e as cenouras estejam macias.
 
-Retire a panela do fogo e deixe a sopa esfriar um pouco. Em seguida, use um liquidificador ou um mixer de imersão para processar a sopa até obter uma consistência cremosa.
+          Retire a panela do fogo e deixe a sopa esfriar um pouco. Em seguida, use um liquidificador ou um mixer de imersão para processar a sopa até obter uma consistência cremosa.
 
-Se preferir uma sopa mais rústica, você pode amassar alguns pedaços de abóbora e cenoura com um garfo em vez de processar completamente.
+          Se preferir uma sopa mais rústica, você pode amassar alguns pedaços de abóbora e cenoura com um garfo em vez de processar completamente.
 
-Após processar a sopa, leve-a de volta ao fogo baixo para aquecer novamente. Verifique o tempero e ajuste o sal e a pimenta, se necessário.
+          Após processar a sopa, leve-a de volta ao fogo baixo para aquecer novamente. Verifique o tempero e ajuste o sal e a pimenta, se necessário.
 
-Sirva a sopa de abóbora quente. Se desejar, decore com sementes de abóbora torradas por cima.`,
+          Sirva a sopa de abóbora quente. Se desejar, decore com sementes de abóbora torradas por cima.`,
           comentario: '',
           imgUrl: 'https://escolhabefree.com.br/wp-content/uploads/2022/08/sopa-de-abobora.jpg',
           videoUrl: '',
@@ -192,7 +192,7 @@ Sirva a sopa de abóbora quente. Se desejar, decore com sementes de abóbora tor
 
 
         const receita4: Receita={
-          usuario: 'Administrador',
+          usuario: 'Administrador@gmail.com',
           nome: 'Guacamole',
           ingrediente: `
           2 abacates maduros
@@ -227,7 +227,7 @@ Sirva a sopa de abóbora quente. Se desejar, decore com sementes de abóbora tor
 
 
         const receita5: Receita={
-          usuario: 'Administrador',
+          usuario: 'Administrador@gmail.com',
           nome: 'Pudim de Leite Condensado',
           ingrediente: `
           1 lata de leite condensado
@@ -258,7 +258,7 @@ Sirva a sopa de abóbora quente. Se desejar, decore com sementes de abóbora tor
 
 
         const receita6: Receita={
-          usuario: 'Administrador',
+          usuario: 'Administrador@gmail.com',
           nome: 'Tacos Mexicanos',
           ingrediente: `
           500g de carne moída
@@ -304,7 +304,7 @@ Sirva a sopa de abóbora quente. Se desejar, decore com sementes de abóbora tor
 
 
         const receita7: Receita={
-          usuario: 'Administrador',
+          usuario: 'Administrador@gmail.com',
           nome: 'Salada Caprese',
           ingrediente: `
           2 tomates grandes
@@ -339,7 +339,7 @@ Sirva a sopa de abóbora quente. Se desejar, decore com sementes de abóbora tor
 
 
         const receita8: Receita={
-          usuario: 'Administrador',
+          usuario: 'Administrador@gmail.com',
           nome: 'Smoothie de Frutas Tropicais',
           ingrediente: `
           1 banana madura
@@ -368,7 +368,7 @@ Sirva a sopa de abóbora quente. Se desejar, decore com sementes de abóbora tor
 
 
         const receita9: Receita={
-          usuario: 'Administrador',
+          usuario: 'Administrador@gmail.com',
           nome: 'Brigadeiro Gourmet',
           ingrediente: `
           1 lata de leite condensado
