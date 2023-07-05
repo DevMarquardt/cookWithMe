@@ -104,7 +104,7 @@ export class perfilComponent {
                 element.nome = this.Usuario.nome
                 element.email = this.Usuario.email
                 element.senha = this.Usuario.senha
-                element.foto = this.imageUrl
+                element.foto = this.UserAntigo.foto
             }
         });
 
