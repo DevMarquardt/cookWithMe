@@ -115,7 +115,7 @@
         <div class="input" *ngIf="comentBol">
           <div class="comentariosBox">
 
-            <div class="flex" *ngFor="let comentario of comentariosLogado">
+            <div class="flex" *ngFor="let comentario of comentariosLogado; index as indice">
               <div style="display: flex;">
                 <img [src]="comentario.fotoUsuario" width="40px" height="35px" style="border-radius: 1000px; "
                   alt="">
@@ -125,6 +125,9 @@
                   </div>
                   <div>
                     <h5>{{comentario.nota}}/5 <img src="../../assets/imagens/star.png" width="13px" alt=""></h5>
+                  </div>
+                  <div *ngIf="Usuario.adm === true">
+                    <h5><img src="../../assets/imagens/deleteComent.png" style="cursor: pointer;" alt="" width="20px" (click)="excluirComentario(indice)"></h5>
                   </div>
                 </div>
                 <div class="coment" style="display: flex; justify-content: first baseline; margin-left: -10rem;">
@@ -136,7 +139,7 @@
           <div class="boxComentar">
             <div class="comentar">
               <input placeholder="Comente aqui!" type="text" name="" id="" [(ngModel)]="Comentario.comentario">
-              <input class="nota" type="number" max="5" maxlength="0" [(ngModel)]="Comentario.nota">
+              <input class="nota" type="number" max="5" min="0" maxlength="0" [(ngModel)]="Comentario.nota">
               <div class="confirmarRegistro">
                   <button class="confirmar" (click)="comentar()">Comentar</button>
               </div>

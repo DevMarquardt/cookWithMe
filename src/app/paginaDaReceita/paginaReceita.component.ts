@@ -24,6 +24,7 @@ interface Usuario {
   email: string;
   senha: string;
   foto: string;
+  adm: boolean;
 }
 
 @Component({
@@ -37,7 +38,8 @@ export class paginaDaReceita {
     nome: '',
     email: '',
     senha: '',
-    foto: ''
+    foto: '',
+    adm: false
   }
 
   Comentario = {
@@ -159,7 +161,7 @@ export class paginaDaReceita {
     }
   }
 
-  ingredienteBol: boolean = true
+  ingredienteBol: boolean = false
   ingredienteOn(): void {
     this.ingredienteBol = true
     this.passoBol = false
@@ -174,7 +176,7 @@ export class paginaDaReceita {
     this.comentBol = false
   }
 
-  comentBol: boolean = false
+  comentBol: boolean = true
   comentOn(): void {
     this.comentBol = true
     this.passoBol = false
@@ -206,6 +208,11 @@ export class paginaDaReceita {
       if (this.Comentario.nota > 5) {
         this.Comentario.nota = 5
       }
+
+      else if(this.Comentario.nota < 0){
+        this.Comentario.nota = 0
+      }
+      
       const newComent: Comentario = {
         usuarioQueComentou: this.Usuario.nome,
         fotoUsuario: this.Usuario.foto,
@@ -221,5 +228,11 @@ export class paginaDaReceita {
       this.ngOnInit()
       window.location.reload()
     }
+  }
+
+  excluirComentario(indice){
+    this.comentarios.splice(indice, 1)
+    window.localStorage.setItem('comentarios', JSON.stringify(this.comentarios))
+    window.location.reload()
   }
 }

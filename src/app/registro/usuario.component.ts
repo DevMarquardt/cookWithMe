@@ -5,6 +5,7 @@ interface Usuario {
     email: string;
     senha: string;
     foto: string;
+    adm: boolean;
 }
 
 interface Receita{
@@ -33,7 +34,8 @@ export class userComponent {
         nome: '',
         email: '',
         senha: '',
-        foto: ''
+        foto: '',
+        adm: false
     }
 
     Receita={
@@ -65,7 +67,8 @@ export class userComponent {
           nome: 'Administrador',
           email: 'Administrador@gmail.com',
           senha: '...',
-          foto: ''
+          foto: this.Usuario.foto = 'https://www.promoview.com.br/uploads/images/unnamed%2819%29.png',
+          adm: true
         }
         this.usuarios.push(user)
         localStorage.setItem("registrados", JSON.stringify(this.usuarios))
@@ -419,7 +422,8 @@ Sirva a sopa de abóbora quente. Se desejar, decore com sementes de abóbora tor
             nome: this.Usuario.nome,
             email: this.Usuario.email,
             senha: this.Usuario.senha,
-            foto: ''
+            foto: this.Usuario.foto = 'https://www.promoview.com.br/uploads/images/unnamed%2819%29.png',
+            adm: false
           }
           this.usuarios.push(user)
           localStorage.setItem("registrados", JSON.stringify(this.usuarios))

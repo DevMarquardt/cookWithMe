@@ -2,7 +2,8 @@
     width: 280px;
     height: 280px;
     border-radius: 15px;
-    border: 2px solid white;  
+    border: 2px solid white;
+    cursor: pointer;  
 }
 
 .vid{
@@ -105,6 +106,27 @@ h3{
     display: flex;
     justify-content: center;
 }
+
+.box{
+    width: 12rem;
+    margin-top: 10px;
+    background-color: #bebebe;
+    height: 12rem;
+    overflow: auto;
+    border-radius: 20px;
+}
+
+.userEnota{
+    display: flex;
+    width: 8rem;
+    justify-content: space-between;
+    margin-left: 5px;
+}
+
+.flex{
+    padding: 15px;
+}
+
 
 
 

@@ -71,6 +71,15 @@ export class PaginaInicialComponent{
       foto: ''
     }
 
+    Comentario = {
+      fotoUsuario: '',
+      usuarioQueComentou: '',
+      comentario: '',
+      nota: 0,
+      receita: '',
+      receitaUser: ''
+    }
+
     Receita={
       usuario:'',
       nome: '',
@@ -105,6 +114,9 @@ export class PaginaInicialComponent{
     const user2 = window.localStorage.getItem('registrados') || '[]';
     this.usuarios = JSON.parse(user2);
 
+    const coment = window.localStorage.getItem('comentarios') || '[]';
+    this.comentarios = JSON.parse(coment);
+
     var m = this.receitas.length, t, i;
 
     this.userFoto.push(this.Usuario)
@@ -123,7 +135,19 @@ export class PaginaInicialComponent{
       this.slide[index] = this.receitas[index];
     }
 
+    this.comentarios.forEach(element => {
+      this.receitas.forEach(elementReceita => {
+        if(element.receita === elementReceita.nome && elementReceita.usuario === this.Usuario.nome){
+          this.comentariosLogado.push(element)
+        }
+      });
+    });
+
+    console.log(this.comentarios)
+
   }
+
+  comentariosLogado: Comentario[] = []
 
   salvaImagem(img){
     localStorage.setItem('receitaPagina', JSON.stringify(img))
@@ -131,11 +155,31 @@ export class PaginaInicialComponent{
 
   }
 
+  redirecionaPaginaReceita(comentario){
+    this.receitas.forEach(element => {
+      if(element.nome === comentario.receita){
+        localStorage.setItem('receitaPagina', JSON.stringify(element))
+        window.location.replace("http://localhost:4200/Receita")
+      }
+    });
+  }
+
+  
+
   desligaCard(event){
     if(event.x > 607 && event.y > 60 || event.y > 20 && event.x < 497){
       this.mostraMenuconfig = false
       this.mostraMenuCat = false
+      this.mostraNotific = false
     }
+  }
+
+  mostraNotific: boolean = false
+
+  mostraNotificacoes(){
+    this.mostraNotific = !this.mostraNotific
+    this.mostraMenuCat = false
+    this.mostraMenuconfig = false
   }
 
   mostraMenuconfig: boolean = false
@@ -143,12 +187,14 @@ export class PaginaInicialComponent{
   showMenuconfig():void{
     this.mostraMenuconfig = !this.mostraMenuconfig
     this.mostraMenuCat = false
+    this.mostraNotific = false
   }
 
   mostraMenuCat: boolean = false
   showCategorias():void{
     this.mostraMenuCat = !this.mostraMenuCat
     this.mostraMenuconfig = false
+    this.mostraNotific = false
   }
 
   enterPesquisa(){

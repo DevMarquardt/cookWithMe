@@ -10,6 +10,35 @@
     </div>
 
     <div class="cabecalhoPAGINAS">
+
+      <div>
+        <div style="display: flex; flex-direction: column; align-items: center; transition: 1s; width: 10rem;">
+          <div>
+            <a class="a" (click)="mostraNotificacoes()">Notificações</a>
+          </div>
+          <div class="box" *ngIf="mostraNotific">
+            <div class="flex" *ngFor="let comentario of comentariosLogado" (click)="redirecionaPaginaReceita(comentario)">
+              <div style="display: flex;">
+                <img [src]="comentario.fotoUsuario" width="25px" height="25px" style="border-radius: 1000px;border: 1px solid black; "
+                  alt="">
+                <div class="userEnota" style="margin-top: -25px;">
+                  
+                  <div>
+                    <h6>{{comentario.usuarioQueComentou}}</h6>
+                  </div>
+                  <div>
+                    <h6>{{comentario.nota}}/5 <img src="../../assets/imagens/star.png" width="13px" alt=""></h6>
+                  </div>
+                </div>
+                <div class="coment" style="display: flex; justify-content: first baseline; margin-left: -8rem; cursor: pointer;">
+                  <h6>{{comentario.comentario}}</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="container">
         <div>
           <a class="a" href="http://localhost:4200/addReceita">Adicionar Receita</a>
