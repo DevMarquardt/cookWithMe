@@ -44,8 +44,7 @@ export class privacidadeComponent {
         nome: '',
         email: '',
         senha: '',
-        foto: '',
-        oculta:  false
+        foto: ''
     }
 
     Receita = {
@@ -55,7 +54,8 @@ export class privacidadeComponent {
         passoApasso: '',
         comentario: '',
         imgUrl: '',
-        videoUrl: ''
+        videoUrl: '',
+        oculta: false
     }
 
     ReceitaFav = {
@@ -112,20 +112,37 @@ export class privacidadeComponent {
         window.location.replace('http://localhost:4200/registrar')
   }
 
+  receitasUsuario: Receita[] = []
   receitasOcultas: Receita[] = []
+
   ocultarReceitas(){
     let contador = 0
-    this.Usuario.oculta = true
-    localStorage.setItem('receitasOcultas', JSON.stringify(this.receitas))
+    const receita2 = window.localStorage.getItem('receitas') || '[]';
+    if(receita2 != '[]'){
+        this.receitasOcultas = JSON.parse(receita2);
 
-    this.receitas.forEach(element => {
-        if(element.usuario === this.Usuario.email){
-            this.receitas.splice(contador, 1)
+        this.receitas.forEach(element => {
+          if(element.usuario === this.Usuario.email){
+            element.oculta = true
+            this.receitasOcultas.push(element)
+            this.receitasUsuario.push(element)
+          }
+        });
+        localStorage.setItem('receitasOcultas', JSON.stringify(this.receitas))
+    
+        while(this.receitasUsuario.length > 0){
+          this.receitas.forEach((element, index) => {
+            if(element.usuario === this.Usuario.email){
+                this.receitas.splice(index, 1)
+                this.receitasUsuario.splice(index, 1)
+            }
+            index+=1
+          });
         }
-        contador+=1
-    });
-    localStorage.setItem('receitas', JSON.stringify(this.receitas))
-  }
+        
+        localStorage.setItem('receitas', JSON.stringify(this.receitas))
+      }
+    }
 
   TirarOcultarReceitas(){
     let contador = 0
@@ -134,17 +151,20 @@ export class privacidadeComponent {
 
     this.receitasOcultas.forEach(element => {
       if(element.usuario === this.Usuario.email){
+        element.oculta = false
         this.receitas.push(element)
       }
     });
     localStorage.setItem('receitas', JSON.stringify(this.receitas))
 
-    this.receitasOcultas.forEach(element => {
-      if(element.usuario === this.Usuario.email){
-          this.receitasOcultas.splice(contador, 1)
-      }
-      contador+=1
-  });
+    while(this.receitasOcultas.length > 0){
+      this.receitasOcultas.forEach((element, index) => {
+        if(element.usuario === this.Usuario.email){
+            this.receitasOcultas.splice(index, 1)
+        }
+        index+=1
+      });
+    }
 
   localStorage.setItem('receitasOcultas', JSON.stringify(this.receitasOcultas))
 

@@ -9,7 +9,6 @@ interface Receita{
   imgUrl: string
   videoUrl: string
   categoria: string
-  oculta: boolean
 }
 
 interface Usuario {
@@ -137,13 +136,13 @@ export class PaginaInicialComponent{
 
     this.comentarios.forEach(element => {
       this.receitas.forEach(elementReceita => {
-        if(element.receita === elementReceita.nome && elementReceita.usuario === this.Usuario.nome){
+        if(element.receita === elementReceita.nome && elementReceita.usuario === this.Usuario.email){
           this.comentariosLogado.push(element)
         }
       });
     });
 
-    console.log(this.comentarios)
+    console.log(this.comentariosLogado)
 
   }
 
