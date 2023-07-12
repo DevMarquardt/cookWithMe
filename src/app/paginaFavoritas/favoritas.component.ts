@@ -90,7 +90,7 @@ export class favoritasComponent{
   }
 
   salvaImagem(img){
-    localStorage.setItem('receitaPagina', JSON.stringify(img))
+    window.localStorage.setItem('receitaPagina', JSON.stringify(img))
     window.location.replace("http://localhost:4200/Receita")
   }
 

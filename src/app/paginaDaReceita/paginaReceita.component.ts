@@ -154,11 +154,10 @@ export class paginaDaReceita {
     if (verificaSeTemOutraIgual) {
       this.heart = "../../assets/imagens/heart.png"
       this.receitasFavoritas.push(favoritas)
-      window.localStorage.setItem('receitasFavoritas', JSON.stringify(this.receitasFavoritas))
     } else {
       this.heart = "../../assets/imagens/heart-nocolor.png"
-      window.localStorage.setItem('receitasFavoritas', JSON.stringify(this.receitasFavoritas))
     }
+    window.localStorage.setItem('receitasFavoritas', JSON.stringify(this.receitasFavoritas))
   }
 
   ingredienteBol: boolean = false
