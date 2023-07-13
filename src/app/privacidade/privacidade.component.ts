@@ -82,9 +82,6 @@ export class privacidadeComponent {
         const user2 = window.localStorage.getItem('registrados') || '[]';
         this.usuarios = JSON.parse(user2);
 
-        const receita2 = window.localStorage.getItem('receitas') || '[]';
-        this.receitas = JSON.parse(receita2);
-
     }
 
     desligaCard(event){
@@ -116,38 +113,33 @@ export class privacidadeComponent {
   receitasOcultas: Receita[] = []
 
   ocultarReceitas(){
-    let contador = 0
+    console.log(this.Usuario.email)
+              
     const receita2 = window.localStorage.getItem('receitas') || '[]';
     if(receita2 != '[]'){
-        this.receitasOcultas = JSON.parse(receita2);
+      this.receitas = JSON.parse(receita2);
 
-        this.receitas.forEach(element => {
-          if(element.usuario === this.Usuario.email){
-            element.oculta = true
-            this.receitasOcultas.push(element)
-            this.receitasUsuario.push(element)
-          }
-        });
-        localStorage.setItem('receitasOcultas', JSON.stringify(this.receitas))
-    
-        while(this.receitasUsuario.length > 0){
-          this.receitas.forEach((element, index) => {
-            if(element.usuario === this.Usuario.email){
-                this.receitas.splice(index, 1)
-                this.receitasUsuario.splice(index, 1)
-            }
-            index+=1
-          });
+      for (let i = this.receitas.length - 1; i >= 0; i--) {
+        if(this.receitas[i].usuario == this.Usuario.email){
+          console.log(this.Usuario.email)
+          console.log(this.receitas[i].usuario)
+          this.receitas[i].oculta = true
+          this.receitasOcultas.push(this.receitas[i])
+          this.receitas.splice(i, 1);
         }
-        
-        localStorage.setItem('receitas', JSON.stringify(this.receitas))
       }
+
+      window.localStorage.setItem('receitasOcultas', JSON.stringify(this.receitasOcultas))
+      window.localStorage.removeItem('receitas')
+      window.localStorage.setItem('receitas', JSON.stringify(this.receitas))
+
     }
+  }
 
   TirarOcultarReceitas(){
     let contador = 0
-    const receita2 = window.localStorage.getItem('receitasOcultas') || '[]';
-    this.receitasOcultas = JSON.parse(receita2);
+    const receita = window.localStorage.getItem('receitasOcultas') || '[]';
+    this.receitasOcultas = JSON.parse(receita);
 
     this.receitasOcultas.forEach(element => {
       if(element.usuario === this.Usuario.email){
@@ -155,19 +147,21 @@ export class privacidadeComponent {
         this.receitas.push(element)
       }
     });
+    
     localStorage.setItem('receitas', JSON.stringify(this.receitas))
 
-    while(this.receitasOcultas.length > 0){
-      this.receitasOcultas.forEach((element, index) => {
-        if(element.usuario === this.Usuario.email){
-            this.receitasOcultas.splice(index, 1)
-        }
-        index+=1
-      });
+    for (let i = this.receitas.length - 1; i >= 0; i--) {
+
+      if(this.receitas[i].usuario == this.Usuario.email){
+        console.log(this.Usuario.email)
+        console.log(this.receitas[i].usuario)
+        this.receitas[i].oculta = true
+        this.receitasOcultas.push(this.receitas[i])
+        this.receitas.splice(i, 1);
+      }
     }
 
   localStorage.setItem('receitasOcultas', JSON.stringify(this.receitasOcultas))
-
 
   }
 
