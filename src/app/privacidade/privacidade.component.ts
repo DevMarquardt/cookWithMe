@@ -113,56 +113,47 @@ export class privacidadeComponent {
   receitasOcultas: Receita[] = []
 
   ocultarReceitas(){
-    console.log(this.Usuario.email)
-              
-    const receita2 = window.localStorage.getItem('receitas') || '[]';
-    if(receita2 != '[]'){
-      this.receitas = JSON.parse(receita2);
+    const receita2 = localStorage.getItem('receitas') || '[]';
+    const receita = localStorage.getItem('receitasOcultas') || '[]';
+    this.receitasOcultas = JSON.parse(receita);
+    this.receitas = JSON.parse(receita2);
 
-      for (let i = this.receitas.length - 1; i >= 0; i--) {
-        if(this.receitas[i].usuario == this.Usuario.email){
-          console.log(this.Usuario.email)
-          console.log(this.receitas[i].usuario)
-          this.receitas[i].oculta = true
-          this.receitasOcultas.push(this.receitas[i])
-          this.receitas.splice(i, 1);
-        }
+    for (let i = this.receitas.length - 1; i >= 0; i--) {
+      if(this.receitas[i].usuario === this.Usuario.email){
+        let element = this.receitas[i]
+        console.log(element)
+        this.receitasOcultas.push(element)
+        this.receitas.splice(i, 1);
+        localStorage.setItem('receitasOcultas',JSON.stringify(this.receitasOcultas))
+        localStorage.setItem('receitas', JSON.stringify(this.receitas))
       }
-
-      window.localStorage.setItem('receitasOcultas', JSON.stringify(this.receitasOcultas))
-      window.localStorage.removeItem('receitas')
-      window.localStorage.setItem('receitas', JSON.stringify(this.receitas))
-
     }
+
+
   }
 
   TirarOcultarReceitas(){
-    let contador = 0
-    const receita = window.localStorage.getItem('receitasOcultas') || '[]';
-    this.receitasOcultas = JSON.parse(receita);
 
-    this.receitasOcultas.forEach(element => {
-      if(element.usuario === this.Usuario.email){
-        element.oculta = false
-        this.receitas.push(element)
-      }
-    });
-    
-    localStorage.setItem('receitas', JSON.stringify(this.receitas))
+    const receita = localStorage.getItem('receitasOcultas') || '[]';
+    const receita2 = localStorage.getItem('receitas') || '[]';
+    this.receitas = JSON.parse(receita2);
+    if(receita != '[]'){
+      this.receitasOcultas = JSON.parse(receita);
 
-    for (let i = this.receitas.length - 1; i >= 0; i--) {
+      for (let i = this.receitasOcultas.length - 1; i >= 0; i--) {
 
-      if(this.receitas[i].usuario == this.Usuario.email){
-        console.log(this.Usuario.email)
-        console.log(this.receitas[i].usuario)
-        this.receitas[i].oculta = true
-        this.receitasOcultas.push(this.receitas[i])
-        this.receitas.splice(i, 1);
+        if(this.receitasOcultas[i].usuario === this.Usuario.email){
+          if(this.receitasOcultas[i].usuario === this.Usuario.email){
+            let element = this.receitasOcultas[i]
+            this.receitas.push(element)
+            this.receitasOcultas.splice(i, 1);
+            localStorage.setItem('receitasOcultas', JSON.stringify(this.receitasOcultas))
+            localStorage.setItem('receitas', JSON.stringify(this.receitas))
+          }
+        }
       }
     }
-
-  localStorage.setItem('receitasOcultas', JSON.stringify(this.receitasOcultas))
-
+    
   }
 
 

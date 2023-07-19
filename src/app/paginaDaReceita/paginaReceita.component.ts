@@ -143,21 +143,21 @@ export class paginaDaReceita {
     let contador2 = 0
     let verificaSeTemOutraIgual: boolean = true
 
-    this.receitasFavoritas.forEach(element => {
-      if (element.nome === favoritas.nome && element.usuario === favoritas.usuario) {
-        this.receitasFavoritas.splice(contador2, 1)
+    for (let i = this.receitasFavoritas.length - 1; i>=0 ; i--){
+      if (this.receitasFavoritas[i].nome === favoritas.nome && this.receitasFavoritas[i].usuario === favoritas.usuario) {
+        this.receitasFavoritas.splice(i, 1)
         verificaSeTemOutraIgual = false
       }
-      contador2 += 1
-    });
+    }
 
     if (verificaSeTemOutraIgual) {
       this.heart = "../../assets/imagens/heart.png"
+      
       this.receitasFavoritas.push(favoritas)
     } else {
       this.heart = "../../assets/imagens/heart-nocolor.png"
     }
-    window.localStorage.setItem('receitasFavoritas', JSON.stringify(this.receitasFavoritas))
+    localStorage.setItem('receitasFavoritas', JSON.stringify(this.receitasFavoritas))
   }
 
   ingredienteBol: boolean = false
